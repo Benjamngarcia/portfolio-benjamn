@@ -4,7 +4,7 @@ import { CarouselTech } from './CarouselTech'
 
 export const Skills = () => {
     return (
-        <Box sx={{ textAlign: 'center', padding: '3rem'}}>
+        <Box sx={{ textAlign: 'center', padding: '3rem', marginTop: '1rem'}}>
             <Typography variant="h4" color="#576F72">
                 Resumen
             </Typography>

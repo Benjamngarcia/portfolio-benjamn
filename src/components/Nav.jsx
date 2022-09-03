@@ -10,21 +10,24 @@ import {
     List,
     ListItem,
     ListItemButton,
-    ListItemText,
     Drawer,
-    Button,
-    IconButton
+    IconButton,
+    Link
 } from "@mui/material";
-
 import { createTheme } from '@mui/material/styles'
-
 import MenuIcon from '@mui/icons-material/Menu';
 import ScrollNav from "./ScrollNav"
 
 const drawerWidth = 240;
-const navItems = ['Sobre mí', 'Proyectos', 'Blog'];
+
 
 export const Nav = props => {
+
+    const navItems = [
+        { name: 'about', text: 'Sobre mí' },
+        { name: 'portfolio', text: 'Proyectos' },
+        { name: 'blog', text: 'Blog' }
+    ];
 
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -41,9 +44,19 @@ export const Nav = props => {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
+                    <ListItem key={item.name} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
+                            <Link 
+                                href={item.name} 
+                                key={item.name}
+                                underline="none"
+                                sx={{
+                                    color: '#576F72',
+                                    fontWeight: 'bold',
+                                    margin: '0px 1rem'
+                                }}>
+                                {item.text}
+                            </Link>
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -61,34 +74,61 @@ export const Nav = props => {
             <ScrollNav>
                 <AppBar component="nav" sx={{ display: 'flex' }}>
                     <Box>
-                            <Toolbar>
-                                <IconButton
-                                    color="inherit"
-                                    aria-label="open drawer"
-                                    edge="start"
-                                    onClick={handleDrawerToggle}
-                                    sx={{ mr: 2, display: { sm: 'none' } }}
-                                >
-                                    <MenuIcon />
-                                </IconButton>
-                                <Typography sx={{textAlign: 'center', marginLeft: 'auto', display: {sm: 'none'}}}>
-                                    Benjamín García
-                                </Typography>
-                                <Typography
-                                    variant="h6"
-                                    component="div"
-                                    sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        <Toolbar>
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="start"
+                                onClick={handleDrawerToggle}
+                                sx={{ mr: 2, display: { sm: 'none' } }}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Link 
+                                href="/" 
+                                underline="none"
+                                sx={{ 
+                                    color:'#576F72',
+                                    textAlign: 'center', 
+                                    marginLeft: 'auto', 
+                                    display:{ sm: 'none' }
+                                }}
                                 >
                                 Benjamín García
-                                </Typography>
-                                <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                                    {navItems.map((item) => (
-                                        <Button key={item} sx={{ color: '#576F72', fontWeight: 'bold' }}>
-                                            {item}
-                                        </Button>
-                                    ))}
-                                </Box>
-                            </Toolbar>
+                            </Link>
+                            <Link
+                                href="/"
+                                variant="h6"
+                                underline="none"
+                                sx={{ 
+                                    color:'#576F72',
+                                    flexGrow: 1, 
+                                    display: { xs: 'none', sm: 'block' } 
+                                }}
+                            >
+                                Benjamín García
+                            </Link>
+                            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                                {
+                                    navItems.map((item) => {
+                                        return (
+                                            <Link
+                                                href={item.name}
+                                                key={item.name}
+                                                underline= "none"
+                                                style={{
+                                                    color: '#576F72',
+                                                    fontWeight: 'bold',
+                                                    margin: '0px 1rem'
+                                                }}
+                                            >
+                                                {item.text}
+                                            </Link>
+                                        )
+                                    })
+                                }
+                            </Box>
+                        </Toolbar>
                         <Box component="nav">
                             <Drawer
                                 container={container}

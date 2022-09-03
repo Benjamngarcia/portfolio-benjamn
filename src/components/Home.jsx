@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import { Footer } from './Footer';
 import {Fragment} from 'react'
 
-const Home = () => {
+export const Home = () => {
     return (
         <Fragment>
             <Nav />
@@ -21,5 +21,3 @@ const Home = () => {
         </Fragment>
     )
 }
-
-export default Home

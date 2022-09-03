@@ -1,4 +1,3 @@
-import imgMain from '../assets/image.png'
 import { MouseScroll } from './MouseScroll';
 import { Box, Typography, Grid, Button, CardMedia, Link } from "@mui/material";
 import { createStyles, makeStyles } from '@mui/styles'
@@ -7,7 +6,7 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 export const useStyles = makeStyles(() =>
     createStyles({
@@ -34,10 +33,10 @@ export const Main = () => {
         >
             <Grid item xs={12} md={6} sx={{ color: '#576F72', fontWeight: 'bold', padding: '0px 10%' }}>
                 <Typography>
-                    <Link href="https://www.linkedin.com/in/benjamngarcia" color="inherit" target="_blank"><LinkedInIcon/></Link>
                     <Link href="https://www.instagram.com/benjamngarcia/" color="inherit" target="_blank"><InstagramIcon/></Link>
+                    <Link href="https://www.linkedin.com/in/benjamngarcia" color="inherit" target="_blank"><LinkedInIcon/></Link>
                     <Link href="https://github.com/Benjamngarcia" color="inherit" target="_blank"><GitHubIcon/></Link>
-                    <Link href="https://wa.me/525537325700?text=%C2%A1Hola%20Benjam%C3%ADn!%20Vi%20tu%20portafolio%20web." color="inherit" target="_blank"><WhatsAppIcon/></Link>
+                    <Link href="https://www.facebook.com/Benjamin.1533/" color="inherit" target="_blank"><FacebookIcon/></Link>
                 </Typography>
                 <Typography variant="h5">
                     ¡Hola! Yo soy 👋🏽
@@ -77,7 +76,7 @@ export const Main = () => {
                     className={classes.rotateIcon}
                     component="img"
                     alt="Benjamín Arturo Pérez García desarrollador web"
-                    image={imgMain}
+                    image="https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/Memoji%20Main.png?alt=media&token=a2473108-1cd3-421e-965e-bb6f2466dfa7"
                     sx={{
                         width: { xs: "50%", md: "90%", lg: "70%" },
                         borderRadius: '50%',
