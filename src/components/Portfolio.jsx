@@ -68,7 +68,7 @@ export const Portfolio = () => {
                     {
                         projects.map((project) => {
                             return (
-                                <Grid key={project.name} item xs={8} sm={6} md={4} lg={3} sx={{ marginBottom: '2rem' }} >
+                                <Grid key={project.title} item xs={8} sm={6} md={4} lg={3} sx={{ marginBottom: '2rem' }} >
                                     <Card sx={{ maxWidth: 300, height: '100%' }}>
                                         <CardMedia
                                             component="img"
