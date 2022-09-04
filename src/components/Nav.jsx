@@ -12,8 +12,8 @@ import {
     ListItemButton,
     Drawer,
     IconButton,
-    Link
 } from "@mui/material";
+import { Link } from 'react-router-dom'
 import { createTheme } from '@mui/material/styles'
 import MenuIcon from '@mui/icons-material/Menu';
 import ScrollNav from "./ScrollNav"
@@ -24,9 +24,9 @@ const drawerWidth = 240;
 export const Nav = props => {
 
     const navItems = [
-        { name: 'about', text: 'Sobre mí' },
-        { name: 'portfolio', text: 'Proyectos' },
-        { name: 'blog', text: 'Blog' }
+        { name: '/about', text: 'Sobre mí' },
+        { name: '/portfolio', text: 'Proyectos' },
+        { name: '/blog', text: 'Blog' }
     ];
 
     const { window } = props;
@@ -47,13 +47,13 @@ export const Nav = props => {
                     <ListItem key={item.name} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
                             <Link 
-                                href={item.name} 
+                                to={item.name} 
                                 key={item.name}
-                                underline="none"
-                                sx={{
+                                style={{
                                     color: '#576F72',
                                     fontWeight: 'bold',
-                                    margin: '0px 1rem'
+                                    margin: '0px 1rem',
+                                    textDecoration: 'none'
                                 }}>
                                 {item.text}
                             </Link>
@@ -85,25 +85,24 @@ export const Nav = props => {
                                 <MenuIcon />
                             </IconButton>
                             <Link 
-                                href="/" 
-                                underline="none"
-                                sx={{ 
+                                to="/" 
+                                class="mlink1"
+                                style={{ 
                                     color:'#576F72',
                                     textAlign: 'center', 
                                     marginLeft: 'auto', 
-                                    display:{ sm: 'none' }
+                                    textDecoration: 'none'
                                 }}
                                 >
                                 Benjamín García
                             </Link>
                             <Link
-                                href="/"
-                                variant="h6"
-                                underline="none"
-                                sx={{ 
+                                to="/"
+                                class="mlink2"
+                                style={{ 
                                     color:'#576F72',
                                     flexGrow: 1, 
-                                    display: { xs: 'none', sm: 'block' } 
+                                    textDecoration: 'none'
                                 }}
                             >
                                 Benjamín García
@@ -113,13 +112,13 @@ export const Nav = props => {
                                     navItems.map((item) => {
                                         return (
                                             <Link
-                                                href={item.name}
+                                                to={item.name}
                                                 key={item.name}
-                                                underline= "none"
                                                 style={{
                                                     color: '#576F72',
                                                     fontWeight: 'bold',
-                                                    margin: '0px 1rem'
+                                                    margin: '0px 1rem',
+                                                    textDecoration: 'none'
                                                 }}
                                             >
                                                 {item.text}
