@@ -22,8 +22,8 @@ export const Portfolio = () => {
         },
         {
             title: "Personal Portfolio",
-            description: "Portafolio personal desarrollado con React, MaterialUI, Sass",
-            demo: "#!", repo: "https://github.com/Benjamngarcia/portfolio-benjamn",
+            description: "Portafolio personal desarrollado con React, MaterialUI, Sass. Con un blog auto administrable en proceso de desarrollo para que el que se usará MongoDB y Node.js con express.",
+            demo: "/", repo: "https://github.com/Benjamngarcia/portfolio-benjamn",
             img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/Portfolio%20App.png?alt=media&token=0c9ef4f0-583c-4f94-a98f-3a0a92ccd161"
         },
         {
@@ -33,7 +33,7 @@ export const Portfolio = () => {
             img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/NoteApp.png?alt=media&token=0f9b3ca2-bdff-41e3-9e14-73a0f7de03e1"
         },
         {
-            title: "Buscador de perfiles de GitHub",
+            title: "Buscador de GitHub",
             description: "Buscador de perfiles de GitHub construido con React, Material UI y axios consumiendo la API pública de GitHub.",
             demo: "https://gitsearcher-benjamn.netlify.app/", repo: "https://github.com/Benjamngarcia/GitHub-profile-searcher",
             img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/GitHub%20profile.png?alt=media&token=6a4e4dd9-6fc4-4a2a-be42-5f525aaeb91d"

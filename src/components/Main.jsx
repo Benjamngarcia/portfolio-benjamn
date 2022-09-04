@@ -56,7 +56,7 @@ export const Main = () => {
                 <Button variant="outlined"
                     startIcon={<DescriptionIcon />}
                     onClick={() => {
-                        window.open('https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/CV%20Benjam%C3%ADn%20Arturo%20P%C3%A9rez%20Garc%C3%ADa.pdf?alt=media&token=d285990a-d0ed-475e-89e5-b2c3367bbc5a', '_blank');
+                        window.open('https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/CV%20Benjam%C3%ADn%20Arturo%20P%C3%A9rez%20Garc%C3%ADa.pdf?alt=media&token=341ea60d-6879-4ae4-9d28-df93e5d7c06b', '_blank');
                     }}
                     sx={{
                         backgroundColor: 'transparent',

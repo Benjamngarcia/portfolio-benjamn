@@ -57,7 +57,7 @@ export const About = () => {
                             realizando proyectos y aprendiendo nuevas tecnologías.
                         </Typography>
 
-                        <Typography component={"p"}>
+                        <Typography component={"p"} variant="body1" textAlign="justify">
                             Actualmente estoy estudiando Ingeniería en Informática en el Instituto Politécnico Nacional; pero además de investigar y
                             practicar nuevos lenguajes de programación, soy entusiasta de descubrir otros ámbitos como lo pueden ser: marketing, leyes, finanzas, diseño y administración.
                             En este sitio podrás encontrar algunos proyectos que he realizado y también algunas publicaciones sobre programación u otros temas relacionados a TI.
