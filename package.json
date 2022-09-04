@@ -2,7 +2,7 @@
   "name": "portfolio-benjamngarcia",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Benjamngarcia.github.io/portfolio-benjamn",
+  "homepage": "https://benjamngarcia.github.io/portfolio-benjamn",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -26,6 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
