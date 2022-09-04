@@ -16,7 +16,7 @@ export const Main = () => {
 
     useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: [ 'Desarrollador Frontend', 'Desarrollador Backend', 'Desarrollador Web'], // Strings to display
+            strings: ['Desarrollador Frontend', 'Desarrollador Backend', 'Desarrollador Web'], // Strings to display
             // Speed settings, try diffrent values untill you get good results
             startDelay: 200,
             typeSpeed: 60,
@@ -51,19 +51,13 @@ export const Main = () => {
                     Benjamín García
                 </Typography>
                 <Typography variant="h5">
-                    {/* Desarrollador Web */}
                     <span ref={el}></span>
-                    {/* <Typed
-                        strings={[
-                            'Desarrollador Web',
-                            'Desarrollador Frontend',
-                            'Desarrollador Backend']}
-                        typeSpeed={60}
-                        backSpeed={100}
-                        loop /> */}
                 </Typography>
                 <Button variant="outlined"
                     startIcon={<DescriptionIcon />}
+                    onClick={() => {
+                        window.open('https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/CV%20Benjam%C3%ADn%20Arturo%20P%C3%A9rez%20Garc%C3%ADa.pdf?alt=media&token=d285990a-d0ed-475e-89e5-b2c3367bbc5a', '_blank');
+                    }}
                     sx={{
                         backgroundColor: 'transparent',
                         color: '#576F72',

@@ -15,16 +15,22 @@ export const Portfolio = () => {
             img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/Catarina%20project.png?alt=media&token=7101257a-1711-46b9-b107-a3703ccf7780"
         },
         {
-            title: "Note App",
-            description: "Aplicación de notas desarrollada con React, useState, useContext, Tailwind CSS usando los servicios de almacenamiento y autenticación de Firebase.",
-            demo: "https://noteapp-benjamn.netlify.app/", repo: "https://github.com/Benjamngarcia/app-react-firebase",
-            img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/NoteApp.png?alt=media&token=0f9b3ca2-bdff-41e3-9e14-73a0f7de03e1"
-        },
-        {
             title: "Pokedux",
             description: 'Platzi pokedux del "curso profesional de React y Redux" contruida con React, Redux toolkit, axios consumiendo la PokeAPI y decidí usar MaterialUI para los estilos.',
             demo: "https://pokedux-benjamn.netlify.app/", repo: "https://github.com/Benjamngarcia/Pokedux",
             img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/Pokedux.png?alt=media&token=9d5e1c21-1d74-4b5a-925e-f08db7333d5d"
+        },
+        {
+            title: "Personal Portfolio",
+            description: "Portafolio personal desarrollado con React, MaterialUI, Sass",
+            demo: "#!", repo: "https://github.com/Benjamngarcia/portfolio-benjamn",
+            img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/Portfolio%20App.png?alt=media&token=0c9ef4f0-583c-4f94-a98f-3a0a92ccd161"
+        },
+        {
+            title: "Note App",
+            description: "Aplicación de notas desarrollada con React, useState, useContext, Tailwind CSS usando los servicios de almacenamiento y autenticación de Firebase.",
+            demo: "https://noteapp-benjamn.netlify.app/", repo: "https://github.com/Benjamngarcia/app-react-firebase",
+            img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/NoteApp.png?alt=media&token=0f9b3ca2-bdff-41e3-9e14-73a0f7de03e1"
         },
         {
             title: "Buscador de perfiles de GitHub",
@@ -44,12 +50,7 @@ export const Portfolio = () => {
             demo: "#!", repo: "https://github.com/Benjamngarcia/ChatNodeWS",
             img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/Chat%20App.png?alt=media&token=9e13fe39-f739-423d-a331-8cae450b8065"
         },
-        {
-            title: "Personal Portfolio",
-            description: "Portafolio personal desarrollado con React, MaterialUI, Sass",
-            demo: "#!", repo: "https://github.com/Benjamngarcia/portfolio-benjamn",
-            img: "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/Portfolio%20App.png?alt=media&token=0c9ef4f0-583c-4f94-a98f-3a0a92ccd161"
-        },
+        
     ]
 
     return (
@@ -64,15 +65,15 @@ export const Portfolio = () => {
                 <Typography variant="h4" sx={{ color: "#576F72", textAlign: "center", fontWeight: "bold" }}>
                     Portafolio de proyectos
                 </Typography>
-                <Grid container sx={{ justifyContent: 'center' }}>
+                <Grid container sx={{ justifyContent: 'center', marginTop: '2rem' }}>
                     {
                         projects.map((project) => {
                             return (
-                                <Grid key={project.title} item xs={8} sm={6} md={4} lg={3} sx={{ marginBottom: '2rem' }} >
+                                <Grid key={project.title} item xs={10} sm={6} md={4} lg={3} sx={{ marginBottom: '2rem' }} >
                                     <Card sx={{ maxWidth: 300, height: '100%' }}>
                                         <CardMedia
                                             component="img"
-                                            alt= {project.description}
+                                            alt={project.description}
                                             height="140"
                                             image={project.img}
                                         />
@@ -85,40 +86,48 @@ export const Portfolio = () => {
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button
-                                                startIcon={<PlayArrowIcon />}
-                                                size="medium"
-                                                variant="contained"
-                                                onClick={() => {
-                                                    window.open(`${project.demo}`, '_blank');
-                                                }}
-                                                sx={{
-                                                    backgroundColor: '#576F72',
-                                                    '&:hover': {
-                                                        backgroundColor: '#383838',
-                                                        borderColor: '#383838'
-                                                    }
-                                                }}
-                                            >
-                                                Demo
-                                            </Button>
-                                            <Button
-                                                startIcon={<FolderIcon />}
-                                                size="medium"
-                                                variant="contained"
-                                                onClick={() => {
-                                                    window.open(`${project.repo}`, '_blank');
-                                                }}
-                                                sx={{
-                                                    backgroundColor: '#576F72',
-                                                    '&:hover': {
-                                                        backgroundColor: '#383838',
-                                                        borderColor: '#383838'
-                                                    }
-                                                }}
-                                            >
-                                                Repositorio
-                                            </Button>
+                                            <Grid container sx={{width: '90%', textAlign: 'center'}}>
+                                                <Grid xs={12} sm={6}>
+                                                    <Button
+                                                        startIcon={<PlayArrowIcon />}
+                                                        size="medium"
+                                                        variant="contained"
+                                                        onClick={() => {
+                                                            window.open(`${project.demo}`, '_blank');
+                                                        }}
+                                                        sx={{
+                                                            backgroundColor: '#576F72',
+                                                            marginBottom: {xs: '1rem', sm: '10px'},
+                                                            '&:hover': {
+                                                                backgroundColor: '#383838',
+                                                                borderColor: '#383838'
+                                                            }
+                                                        }}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                </Grid>
+                                                <Grid xs={12} sm={6}>
+                                                    <Button
+                                                        startIcon={<FolderIcon />}
+                                                        size="medium"
+                                                        variant="contained"
+                                                        onClick={() => {
+                                                            window.open(`${project.repo}`, '_blank');
+                                                        }}
+                                                        sx={{
+                                                            backgroundColor: '#576F72',
+                                                            marginBottom: {xs: '1rem', sm: '10px'},
+                                                            '&:hover': {
+                                                                backgroundColor: '#383838',
+                                                                borderColor: '#383838'
+                                                            }
+                                                        }}
+                                                    >
+                                                        Repositorio
+                                                    </Button>
+                                                </Grid>
+                                            </Grid>
                                         </CardActions>
                                     </Card>
                                 </Grid>
