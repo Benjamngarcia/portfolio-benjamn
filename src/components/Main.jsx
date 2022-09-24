@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { MouseScroll } from './MouseScroll';
 import { Box, Typography, Grid, Button, CardMedia, Link } from "@mui/material";
-// import Typed from 'react-typed';
 import Typed from "typed.js";
 import DescriptionIcon from '@mui/icons-material/Description';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -84,10 +83,10 @@ export const Main = () => {
                         borderRadius: '50%',
                         margin: 'auto',
                         filter: 'drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7))',
-                        transition: "all .2s ease-in-out",
-                        '&:hover': {
-                            transform: 'scale(1.1)'
-                        }
+                        // transition: "all .2s ease-in-out",
+                        // '&:hover': {
+                        //     transform: 'scale(1.1)'
+                        // }
                     }}
                 />
             </Grid>

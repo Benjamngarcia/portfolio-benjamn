@@ -26,7 +26,7 @@ export const Nav = props => {
     const navItems = [
         { name: '/about', text: 'Sobre mí' },
         { name: '/projects', text: 'Proyectos' },
-        { name: '/blog', text: 'Blog' }
+        // { name: '/blog', text: 'Blog' }
     ];
 
     const { window } = props;
