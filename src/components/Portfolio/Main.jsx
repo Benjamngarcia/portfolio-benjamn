@@ -38,10 +38,10 @@ export const Main = () => {
         >
             <Grid item xs={12} md={6} sx={{ color: '#576F72', fontWeight: 'bold', padding: '0px 10%' }}>
                 <Typography>
-                    <Link href="https://www.instagram.com/benjamngarcia/" color="inherit" target="_blank"><InstagramIcon /></Link>
-                    <Link href="https://www.linkedin.com/in/benjamngarcia" color="inherit" target="_blank"><LinkedInIcon /></Link>
-                    <Link href="https://github.com/Benjamngarcia" color="inherit" target="_blank"><GitHubIcon /></Link>
-                    <Link href="https://www.facebook.com/Benjamin.1533/" color="inherit" target="_blank"><FacebookIcon /></Link>
+                    <Link href="https://www.instagram.com/benjamngarcia/" target="_blank" sx={{color: '#576F72', transition: '.3s', '&:hover':{ color: '#BAAC8D' }}}><InstagramIcon /></Link>
+                    <Link href="https://www.linkedin.com/in/benjamngarcia" target="_blank" sx={{color: '#576F72', transition: '.3s', '&:hover':{ color: '#BAAC8D' }}}><LinkedInIcon /></Link>
+                    <Link href="https://github.com/Benjamngarcia" target="_blank" sx={{color: '#576F72', transition: '.3s', '&:hover':{ color: '#BAAC8D' }}}><GitHubIcon /></Link>
+                    <Link href="https://www.facebook.com/Benjamin.1533/" target="_blank" sx={{color: '#576F72', transition: '.3s', '&:hover':{ color: '#BAAC8D' }}}><FacebookIcon /></Link>
                 </Typography>
                 <Typography variant="h5">
                     ¡Hola! Yo soy 👋🏽
@@ -49,7 +49,7 @@ export const Main = () => {
                 <Typography variant="h3">
                     Benjamín García
                 </Typography>
-                <Typography variant="h5">
+                <Typography variant="h5" sx={{color: '#BA918D'}}>
                     <span ref={el}></span>
                 </Typography>
                 <Button variant="outlined"
@@ -64,8 +64,8 @@ export const Main = () => {
                         fontWeight: 'bold',
                         '&:hover': {
                             backgroundColor: 'transparent',
-                            color: '#383838',
-                            borderColor: '#383838'
+                            color: '#BAAC8D',
+                            borderColor: '#BAAC8D'
                         }
                     }}
                 >

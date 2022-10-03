@@ -1,8 +1,8 @@
-import { Nav } from './Nav'
+import { Nav } from '../General/Nav'
 import { Main } from './Main'
 import { Skills } from './Skills'
 import Box from '@mui/material/Box';
-import { Footer } from './Footer';
+import { Footer } from '../General/Footer';
 import {Fragment} from 'react'
 
 export const Home = () => {
@@ -13,7 +13,6 @@ export const Home = () => {
                 component="main"
                 xs={4}
             >
-                {/* <Toolbar /> */}
                 <Main />
                 <Skills />
                 <Footer />

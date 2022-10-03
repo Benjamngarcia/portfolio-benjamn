@@ -19,13 +19,13 @@ export function Footer() {
                 </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
-                <IconButton  target="_blank" href="https://github.com/Benjamngarcia">
+                <IconButton  target="_blank" href="https://github.com/Benjamngarcia" sx={{color: '#576F72', transition: '.3s', '&:hover':{ color: '#BAAC8D' }}}>
                     <GitHubIcon/>
                 </IconButton>
-                <IconButton target="_blank" href="https://www.linkedin.com/in/benjamngarcia">
+                <IconButton target="_blank" href="https://www.linkedin.com/in/benjamngarcia" sx={{color: '#576F72', transition: '.3s', '&:hover':{ color: '#BAAC8D' }}}>
                     <LinkedInIcon/>
                 </IconButton>    
-                <IconButton target="_blank" href="https://www.instagram.com/benjamngarcia/">
+                <IconButton target="_blank" href="https://www.instagram.com/benjamngarcia/" sx={{color: '#576F72', transition: '.3s', '&:hover':{ color: '#BAAC8D' }}}>
                     <InstagramIcon/>
                 </IconButton>    
             </Grid>

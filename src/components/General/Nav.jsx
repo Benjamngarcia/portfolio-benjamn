@@ -86,7 +86,7 @@ export const Nav = props => {
                             </IconButton>
                             <Link 
                                 to="/" 
-                                class="mlink1"
+                                className="mlink1"
                                 style={{ 
                                     color:'#576F72',
                                     textAlign: 'center', 
@@ -98,7 +98,7 @@ export const Nav = props => {
                             </Link>
                             <Link
                                 to="/"
-                                class="mlink2"
+                                className="mlink2"
                                 style={{ 
                                     color:'#576F72',
                                     flexGrow: 1, 
