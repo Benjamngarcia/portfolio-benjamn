@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { MainPresentation } from '@/components/Landing/MainPresentation'
+import { Project } from '@/components/Landing/Project'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <MainPresentation/>
+        <Project/>
       </main>
     </>
   )

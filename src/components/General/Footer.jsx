@@ -1,9 +1,9 @@
-import { Colors } from "@/styles/theme";
 import {
   Grid,
   Typography,
   Divider
 } from "@mui/material";
+import { Colors } from "@/styles/theme";
 import { IconSourceCode } from '@tabler/icons-react';
 import { IconBrandLinkedin } from '@tabler/icons-react';
 import { IconBrandGithub } from '@tabler/icons-react';
@@ -46,7 +46,7 @@ export function Footer() {
         <Typography>🇲🇽</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Divider>
+        <Divider sx={{ margin: '16px auto' }}>
           <IconSourceCode />
           <Typography>Ben</Typography>
         </Divider>
@@ -81,6 +81,6 @@ export function Footer() {
           <IconBrandInstagram />
         </Link>
       </Grid>
-    </Grid >
+    </Grid>
   )
 }

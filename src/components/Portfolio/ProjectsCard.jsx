@@ -35,7 +35,7 @@ function ProjectsCard(props) {
           image={project.img}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="h5" color="primary">
             {project.title}
           </Typography>
           <Typography
@@ -53,12 +53,12 @@ function ProjectsCard(props) {
           </Typography>
           <Box sx={{ textAlign: 'center' }}>
             {
-              project.technologies.map((tech) => {
+              project.technologies.slice(0, 3).map((tech) => {
                 return (
                   <Chip 
                   label={tech} 
                   key={tech} 
-                  color="primary" 
+                  // color="primary" 
                   sx={{ borderRadius: '4px', margin: '16px 5px 5px 5px' }} />
                 )
               })
