@@ -1,13 +1,13 @@
 .links-styles {
-  text-decoration: none;
-  color: #576f72;
-  margin: auto 8px;
-  font-weight: bold;
+  text-decoration: none !important;
+  color: #576f72 !important;
+  margin: auto 8px !important;
+  font-weight: bold !important;
 }
 
 .social-icons {
-  transition: 0.3s;
+  transition: 0.3s !important;
   &:hover {
-    color: #70b0f2;
+    color: #70b0f2 !important;
   }
 }
