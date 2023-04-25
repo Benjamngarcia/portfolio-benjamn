@@ -15,12 +15,11 @@ import { projects } from '../Portfolio/Portfolio';
 import { Colors } from '@/styles/theme';
 
 export function Project() {
-  // const { project } = props
   const project = projects[0]
 
   return (
-    <Box sx={{ color: Colors.primary, marginTop: '16px' }}>
-      <Typography component="h1" variant="h5" fontWeight="bold">
+    <Box component="section" sx={{ color: Colors.primary, marginTop: '16px' }}>
+      <Typography component="h2" variant="h5" fontWeight="bold">
         Último proyecto...
       </Typography>
       <Typography component="p" variant="body1">
@@ -40,7 +39,7 @@ export function Project() {
                       <Chip
                         label={tech}
                         key={tech}
-                        sx={{ borderRadius: '4px', marginRight: '8px' }} />
+                        sx={{ borderRadius: '8px', marginRight: '8px' }} />
                     )
                   })
                 }
@@ -71,7 +70,7 @@ export function Project() {
                     href={project.demo}
                     target="_blank"
                     fullWidth
-                    sx={{ marginBottom: '16px' }}
+                    sx={{ marginBottom: '16px', borderRadius: '8px' }}
                   >
                     Demo
                   </Button>
@@ -85,7 +84,7 @@ export function Project() {
                     href={project.repo}
                     target="_blank"
                     fullWidth
-                    sx={{ marginBottom: '16px' }}
+                    sx={{ marginBottom: '16px', borderRadius: '8px' }}
                   >
                     Repo
                   </Button>

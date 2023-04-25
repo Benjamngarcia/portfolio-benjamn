@@ -34,7 +34,7 @@ export function Nav() {
   };
 
   const drawer = (
-    <Box sx={{ margin: '8px 16px' }}>
+    <Box sx={{ margin: '8px' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Link href="/" className='links-styles' alt="Link para regresar a la página inicial del portafolio">
           <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -64,7 +64,8 @@ export function Nav() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "8px"
+                gap: "8px",
+                width: "100%"
               }}
             >
               {item.icon}
@@ -91,7 +92,8 @@ export function Nav() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "8px"
+              gap: "8px",
+              width: "100%"
             }}
           >
             <IconBrandInstagram />
@@ -114,7 +116,8 @@ export function Nav() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "8px"
+              gap: "8px",
+              width: "100%"
             }}
           >
             <IconBrandLinkedin />
@@ -137,7 +140,8 @@ export function Nav() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "8px"
+              gap: "8px",
+              width: "100%"
             }}
           >
             <IconBrandGithub />
@@ -214,7 +218,7 @@ export function Nav() {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', borderRadius: '0 0 8px 8px' },
           }}
         >
           {drawer}

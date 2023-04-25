@@ -17,15 +17,12 @@ function ProjectsCard(props) {
 
   return (
     <Grid
+      component="article"
       item
       xs={12}
       sm={6}
       md={4}
-      sx={{
-        marginTop: '16px',
-        display: 'flex',
-        // justifyContent: 'center'
-      }}
+      sx={{ marginTop: '16px', display: 'flex' }}
     >
       <Card sx={{ maxWidth: 300, height: '100%', borderRadius: '4px' }}>
         <CardMedia
@@ -55,11 +52,10 @@ function ProjectsCard(props) {
             {
               project.technologies.slice(0, 3).map((tech) => {
                 return (
-                  <Chip 
-                  label={tech} 
-                  key={tech} 
-                  // color="primary" 
-                  sx={{ borderRadius: '4px', margin: '16px 5px 5px 5px' }} />
+                  <Chip
+                    label={tech}
+                    key={tech}
+                    sx={{ borderRadius: '8px', margin: '16px 5px 5px 5px' }} />
                 )
               })
             }
@@ -76,7 +72,7 @@ function ProjectsCard(props) {
                 href={project.demo}
                 target="_blank"
                 fullWidth
-                sx={{ marginBottom: '16px' }}
+                sx={{ marginBottom: '16px', borderRadius: '8px' }}
               >
                 Demo
               </Button>
@@ -90,7 +86,7 @@ function ProjectsCard(props) {
                 href={project.repo}
                 target="_blank"
                 fullWidth
-                sx={{ marginBottom: '16px' }}
+                sx={{ marginBottom: '16px', borderRadius: '8px' }}
               >
                 Repo
               </Button>

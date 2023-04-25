@@ -23,6 +23,9 @@ export function Footer() {
         color: Colors.primary
       }}
     >
+      <Grid item xs={12} md={5}>
+        <Typography>🇲🇽</Typography>
+      </Grid>
       <Grid item xs={12} md={7}>
         <Typography>
           <Link
@@ -41,9 +44,6 @@ export function Footer() {
             Envíame un email.
           </Link>
         </Typography>
-      </Grid>
-      <Grid item xs={12} md={5}>
-        <Typography>🇲🇽</Typography>
       </Grid>
       <Grid item xs={12}>
         <Divider sx={{ margin: '16px auto' }}>

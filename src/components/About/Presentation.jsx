@@ -4,7 +4,6 @@ import {
   Grid,
   Typography,
   CardMedia,
-  Button,
   Link
 } from '@mui/material'
 
@@ -28,10 +27,7 @@ export const Presentation = () => {
           xs={12}
           align="center"
           justify="center"
-          sx={{
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
+          sx={{ alignItems: 'center', justifyContent: 'center' }}
         >
           <Grid item>
             <CardMedia
@@ -51,18 +47,19 @@ export const Presentation = () => {
           <Typography component="h1" variant="h5" fontWeight="bold">
             Sobre mí
           </Typography>
-          <Typography component={"p"} variant="body1" textAlign="justify">
+          <Typography component="p" variant="body1" textAlign="justify">
             Hola, soy Benjamín; estudiante de Ingeniería en Informática y <b>desarrollador web; </b>
-            desde que tengo memoria siempre me ha gustado la tecnología, pero de todas las
-            áreas del desarrollo que he podido probar, el desarrollo web me pareció un mundo
-            increíble y con un sinfín de posibilidades.
+            desde que tengo memoria siempre me ha gustado la tecnología, pero descubrí que era mi
+            pasión cuando me adentré al desarrollo web y más que ser tedioso el proceso de aprendizaje
+            se volvió mi hobbie el tomar cursos y todo lo que me pudiera enseñar más, ya que esta área
+            me pareció un mundo increíble y con un sinfín de posibilidades.
           </Typography>
-          <Typography component={"p"} variant="body1" textAlign="justify">
+          <Typography component="p" variant="body1" textAlign="justify">
             Actualmente me encuentro enfocado en poder perfeccionar mis habilidades como
             <b> Frontend Developer, </b> sin embargo me divierto igual desarrollando actividades
             en otras áreas como Backend o Bases de datos.
           </Typography>
-          <Typography component={"p"} variant="body1" textAlign="justify">
+          <Typography component="p" variant="body1" textAlign="justify">
             Las tecnologías que <b>más uso actualmente</b> son: Javascript Vanilla, React, Node,
             Next, MySQL y MongoDB.
           </Typography>
@@ -83,14 +80,11 @@ export const Presentation = () => {
               <IconBrandMongodb width={35} height={35} color="#589636" />
             </Link>
           </Box>
-          <Typography component={"p"} variant="body1" textAlign="justify">
+          <Typography component="p" variant="body1" textAlign="justify">
             Además de investigar y practicar nuevos lenguajes de programación,
             soy entusiasta de descubrir otras áreas fuera del código
             como lo pueden ser: marketing, finanzas, diseño y administración.
-            En esta página podrás encontrar algunos proyectos que he realizado y
-            también algunas publicaciones sobre programación u otros temas
-            relacionados a TI. Me gusta apoyar a otras personas compartiendo
-            lo que voy aprendiendo por medio de
+            Me gusta apoyar a otras personas compartiendo lo que voy aprendiendo por medio de
             <Link
               href="https://dictamigos.xyz/"
               target="_blank"
@@ -98,6 +92,11 @@ export const Presentation = () => {
               sx={{ color: '#3B71DD', fontWeight: 'bold' }}>
               &nbsp; Dictamigos.
             </Link>
+          </Typography>
+          <Typography component="p" variant="body1" textAlign="justify">
+            En esta página podrás encontrar algunos proyectos que he realizado y
+            también algunas publicaciones sobre programación u otros temas
+            relacionados a TI.
           </Typography>
         </Grid>
       </Grid>

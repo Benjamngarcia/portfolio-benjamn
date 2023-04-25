@@ -8,7 +8,7 @@ import { IconBrandInstagram } from '@tabler/icons-react';
 
 export const MainPresentation = () => {
   return (
-    <Grid container sx={{ marginTop: '64px' }}>
+    <Grid component="section" container sx={{ marginTop: '64px' }}>
       <Grid item xs={12}>
         <Box
           className="memoji-main"
@@ -67,7 +67,8 @@ export const MainPresentation = () => {
               fontWeight: 'bold',
               width: '100%',
               display: 'flex',
-              justifyContent: 'flex-start'
+              justifyContent: 'flex-start',
+              borderRadius: '8px'
             }}
           >
             Ver CV
@@ -84,7 +85,8 @@ export const MainPresentation = () => {
               width: '100%',
               backgroundColor: '#F5F5F5',
               display: 'flex',
-              justifyContent: 'flex-start'
+              justifyContent: 'flex-start',
+              borderRadius: '8px'
             }}
           >
             Sígueme en instagram
