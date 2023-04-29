@@ -12,7 +12,7 @@ import {
 import { IconCaretRight } from '@tabler/icons-react';
 import { IconFolderFilled } from '@tabler/icons-react';
 import { projects } from '../Portfolio/Portfolio';
-import { Colors } from '@/styles/theme';
+import { Colors } from '../../styles/theme';
 
 export function Project() {
   const project = projects[0]

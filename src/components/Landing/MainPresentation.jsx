@@ -1,7 +1,6 @@
-// import { useEffect, useRef } from "react";
 import { MouseScroll } from './MouseScrollIcon';
-import { Box, Typography, Grid, Button, CardMedia, Link } from "@mui/material";
-import { Colors } from '@/styles/theme';
+import { Box, Typography, Grid, Button, Link } from "@mui/material";
+import { Colors } from '../../styles/theme';
 import { IconFileDownload } from '@tabler/icons-react';
 import { IconBrandInstagram } from '@tabler/icons-react';
 

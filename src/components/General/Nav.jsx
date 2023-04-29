@@ -19,7 +19,7 @@ import { IconBrandGithub } from '@tabler/icons-react';
 import { IconBrandInstagram } from '@tabler/icons-react';
 import { IconX } from '@tabler/icons-react';
 import Link from 'next/link';
-import { Colors } from '@/styles/theme';
+import { Colors } from '../../styles/theme';
 
 export function Nav() {
 
