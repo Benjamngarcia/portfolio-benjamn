@@ -3,7 +3,7 @@ import {
   Typography,
   Divider
 } from "@mui/material";
-import { Colors } from "@/styles/theme";
+import { Colors } from "../../styles/theme";
 import { IconSourceCode } from '@tabler/icons-react';
 import { IconBrandLinkedin } from '@tabler/icons-react';
 import { IconBrandGithub } from '@tabler/icons-react';
