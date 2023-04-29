@@ -1,8 +1,8 @@
 import { Grid, Typography, Box } from '@mui/material'
 import { Colors } from '../styles/theme';
-import NotFound from '@/assets/img/NotFound.svg'
+import { Seo } from '../components/Seo';
+import NotFound from '../assets/img/NotFound.svg';
 import Link from 'next/link';
-import { Seo } from '@/components/Seo';
 
 const NotFoundPage = () => {
   return (

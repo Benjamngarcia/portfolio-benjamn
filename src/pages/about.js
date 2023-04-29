@@ -1,5 +1,5 @@
-import { Presentation } from '@/components/About/Presentation'
-import { Seo } from '@/components/Seo'
+import { Presentation } from '../components/About/Presentation'
+import { Seo } from '../components/Seo'
 
 function about() {
   return (
