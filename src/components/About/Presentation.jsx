@@ -1,4 +1,4 @@
-import { Colors } from '@/styles/theme'
+import { Colors } from '../../styles/theme'
 import {
   Box,
   Grid,
