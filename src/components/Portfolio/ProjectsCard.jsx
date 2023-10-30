@@ -73,6 +73,7 @@ function ProjectsCard(props) {
                 target="_blank"
                 fullWidth
                 sx={{ marginBottom: '16px', borderRadius: '8px' }}
+                disabled={!project.demo}
               >
                 Demo
               </Button>

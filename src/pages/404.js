@@ -1,7 +1,7 @@
 import { Grid, Typography, Box } from '@mui/material'
 import { Colors } from '../styles/theme';
 import { Seo } from '../components/Seo';
-import NotFound from '../assets/img/NotFound.svg';
+import NotFound from '../assets/svg/NotFound.svg';
 import Link from 'next/link';
 
 const NotFoundPage = () => {

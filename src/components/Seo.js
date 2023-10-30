@@ -1,4 +1,5 @@
 import Head from "next/head";
+import PortfolioImage from "../assets/img/portfolio-project.png";
 
 export function Seo(props) {
   const { title, description } = props;
@@ -7,7 +8,8 @@ export function Seo(props) {
     <Head>
       <title>{title}</title>
       <meta property="description" content={description} />
-      <meta name="keywords"
+      <meta
+        name="keywords"
         content="Benjamin Arturo Perez Garcia, benjamngarcia, desarrollador web, desarrollador frontend, programadores CDMX"
       />
       <meta name="author" content="Benjamín García" />
@@ -17,8 +19,8 @@ export function Seo(props) {
       <meta property="og:title" content="Benjamín García | Web developer" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content="https://benjamngarcia.me/" />
-      <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/SS%20portfolio.png?alt=media&token=1430a032-c69e-4c72-96f0-2c2e45d348a6" />
-      <link rel="icon" href='/benjamngarcia.png' />
+      <meta property="og:image" content={PortfolioImage.src} />
+      <link rel="icon" href="/benjamngarcia.png" />
     </Head>
   );
 }
@@ -26,5 +28,5 @@ export function Seo(props) {
 Seo.defaultProps = {
   title: "Benjamín García | Web developer",
   description:
-  "Benjamín Arturo Pérez García estudiante de ingeniería en informática; desarrollador web frontend y backend. Fundador de DICTAMIGOS.",
+    "Benjamín Arturo Pérez García estudiante de ingeniería en informática; desarrollador web frontend y backend. Fundador de DICTAMIGOS.",
 };

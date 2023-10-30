@@ -1,23 +1,15 @@
-import { Colors } from '../../styles/theme'
-import {
-  Box,
-  Grid,
-  Typography,
-  CardMedia,
-  Link
-} from '@mui/material'
-
+import { Colors } from "../../styles/theme";
+import { Box, Grid, Typography, CardMedia, Link } from "@mui/material";
 import {
   IconBrandJavascript,
   IconBrandReact,
   IconBrandNextjs,
   IconBrandMysql,
-  IconBrandMongodb
-} from '@tabler/icons-react';
+  IconBrandMongodb,
+} from "@tabler/icons-react";
+import BenjaminImage from "../../assets/img/benjamngarcia.png";
 
 export const Presentation = () => {
-  const imgBenjamn = "https://firebasestorage.googleapis.com/v0/b/portafolio-689ca.appspot.com/o/Benjamngarcia.jpeg?alt=media&token=34b66d2d-f657-47c5-9840-15fda612f95d"
-
   return (
     <Box component="main">
       <Grid container>
@@ -27,41 +19,45 @@ export const Presentation = () => {
           xs={12}
           align="center"
           justify="center"
-          sx={{ alignItems: 'center', justifyContent: 'center' }}
+          sx={{ alignItems: "center", justifyContent: "center" }}
         >
           <Grid item>
             <CardMedia
               component="img"
               alt="Benjamín Arturo Pérez García desarrollador web"
-              image={imgBenjamn}
+              image={BenjaminImage.src}
               sx={{
                 width: "250px",
                 height: "250px",
-                margin: 'auto',
-                borderRadius: '10px'
+                margin: "auto",
+                borderRadius: "10px",
               }}
             />
           </Grid>
         </Grid>
-        <Grid item xs={12} sx={{ color: Colors.primary, marginTop: '16px' }}>
+        <Grid item xs={12} sx={{ color: Colors.primary, marginTop: "16px" }}>
           <Typography component="h1" variant="h5" fontWeight="bold">
             Sobre mí
           </Typography>
           <Typography component="p" variant="body1" textAlign="justify">
-            Hola, soy Benjamín; estudiante de Ingeniería en Informática y <b>desarrollador web; </b>
-            desde que tengo memoria siempre me ha gustado la tecnología, pero descubrí que era mi
-            pasión cuando me adentré al desarrollo web y más que ser tedioso el proceso de aprendizaje
-            se volvió mi hobbie el tomar cursos y todo lo que me pudiera enseñar más, ya que esta área
+            Hola, soy Benjamín; estudiante de Ingeniería en Informática y{" "}
+            <b>desarrollador web; </b>
+            desde que tengo memoria siempre me ha gustado la tecnología, pero
+            descubrí que era mi pasión cuando me adentré al desarrollo web y más
+            que ser tedioso el proceso de aprendizaje se volvió mi hobbie el
+            tomar cursos y todo lo que me pudiera enseñar más, ya que esta área
             me pareció un mundo increíble y con un sinfín de posibilidades.
           </Typography>
           <Typography component="p" variant="body1" textAlign="justify">
-            Actualmente me encuentro enfocado en poder perfeccionar mis habilidades como
-            <b> Frontend Developer, </b> sin embargo me divierto igual desarrollando actividades
-            en otras áreas como Backend o Bases de datos.
+            Actualmente me encuentro enfocado en poder perfeccionar mis
+            habilidades como
+            <b> Frontend Developer, </b> sin embargo me divierto igual
+            desarrollando actividades en otras áreas como Backend o Bases de
+            datos.
           </Typography>
           <Typography component="p" variant="body1" textAlign="justify">
-            Las tecnologías que <b>más uso actualmente</b> son: Javascript Vanilla, React, Node,
-            Next, MySQL y MongoDB.
+            Las tecnologías que <b>más uso actualmente</b> son: Javascript
+            Vanilla, React, Node, Next, MySQL y MongoDB.
           </Typography>
           <Box>
             <Link href="https://www.javascript.com/" target="_blank">
@@ -82,14 +78,16 @@ export const Presentation = () => {
           </Box>
           <Typography component="p" variant="body1" textAlign="justify">
             Además de investigar y practicar nuevos lenguajes de programación,
-            soy entusiasta de descubrir otras áreas fuera del código
-            como lo pueden ser: marketing, finanzas, diseño y administración.
-            Me gusta apoyar a otras personas compartiendo lo que voy aprendiendo por medio de
+            soy entusiasta de descubrir otras áreas fuera del código como lo
+            pueden ser: marketing, finanzas, diseño y administración. Me gusta
+            apoyar a otras personas compartiendo lo que voy aprendiendo por
+            medio de
             <Link
               href="https://dictamigos.xyz/"
               target="_blank"
-              underline='none'
-              sx={{ color: '#3B71DD', fontWeight: 'bold' }}>
+              underline="none"
+              sx={{ color: "#3B71DD", fontWeight: "bold" }}
+            >
               &nbsp; Dictamigos.
             </Link>
           </Typography>
@@ -101,5 +99,5 @@ export const Presentation = () => {
         </Grid>
       </Grid>
     </Box>
-  )
-}
+  );
+};
