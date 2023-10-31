@@ -1,6 +1,6 @@
 import { Container, CssBaseline } from "@mui/material";
-import { Nav } from "../components/General/Nav";
-import { Footer } from "../components/General/Footer";
+import { Nav } from "../components/common/Nav";
+import { Footer } from "../components/common/Footer";
 
 export default function MainLayout(props) {
   const { children } = props;
@@ -9,7 +9,6 @@ export default function MainLayout(props) {
       <CssBaseline />
       <Nav />
       {children}
-      {/* <ScrollToTop/>*/}
       <Footer/>
     </Container>
   )

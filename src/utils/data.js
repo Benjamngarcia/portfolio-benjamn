@@ -1,9 +1,9 @@
-import DictamigosImage from "../../assets/img/dictamigos-project.png";
-import PortfolioImage from "../../assets/img/portfolio-project.png";
-import CatarinaImage from "../../assets/img/catarina-project.png";
-import PokeduxImage from "../../assets/img/pokedux-project.png";
+import DictamigosImage from "../assets/img/dictamigos-project.png";
+import PortfolioImage from "../assets/img/portfolio-project.png";
+import CatarinaImage from "../assets/img/catarina-project.png";
+import PokeduxImage from "../assets/img/pokedux-project.png";
 
-export const projects = [
+export const projectsPortfolio = [
   {
     title: "Dictamigos",
     description:
