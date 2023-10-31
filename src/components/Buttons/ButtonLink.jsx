@@ -1,17 +1,25 @@
 import { Button } from "@mui/material";
 
-export const ButtonLink = ({ iconComponent, backgroundColor, textButton, ...rest }) => {
+export const ButtonLink = ({
+  iconComponent,
+  iconCenter,
+  fontBold,
+  backgroundColor,
+  paddingButton,
+  textButton,
+  ...rest
+}) => {
   return (
     <Button
       {...rest}
       startIcon={iconComponent}
       target="_blank"
       sx={{
-        padding: "16px",
-        fontWeight: "bold",
+        padding: paddingButton ? "16px" : "auto",
+        fontWeight: fontBold ? "bold" : "auto",
         width: "100%",
         display: "flex",
-        justifyContent: "flex-start",
+        justifyContent: iconCenter ? "center" : "flex-start",
         borderRadius: "8px",
         backgroundColor: backgroundColor,
       }}

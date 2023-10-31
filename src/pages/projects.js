@@ -1,11 +1,7 @@
 import { Seo } from "../components/Seo";
-import {
-  Box,
-  Grid,
-  Typography,
-} from '@mui/material'
-import ProjectsCard from '../components/Cards/ProjectsCard'
-import { projectsPortfolio } from '../utils/data'
+import { Box, Grid, Typography } from "@mui/material";
+import { ProjectsCard } from "../components/Cards/ProjectsCard";
+import { projectsPortfolio } from "../utils/data";
 
 function projects() {
   return (
@@ -40,7 +36,19 @@ function projects() {
           }}
         >
           {projectsPortfolio.map((project) => {
-            return <ProjectsCard project={project} key={project.title} />;
+            return (
+              <Grid
+                component="article"
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                sx={{ marginTop: "16px", display: "flex" }}
+                key={project.title}
+              >
+                <ProjectsCard project={project} isPortfolio/>
+              </Grid>
+            );
           })}
         </Grid>
       </Box>

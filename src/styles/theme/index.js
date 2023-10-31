@@ -7,7 +7,7 @@ export const Colors = {
   secondary: "#70B0F2",
   secondaryLight: "#D0E6FD",
   secondaryDark: "#4C99E9",
-  contrastText: '#fff',
+  contrastText: "#fff",
   success: "#004d40",
   info: "#00a2ff",
   danger: "#FFB72F",
@@ -28,8 +28,8 @@ export const Colors = {
   // solid color
   /////////////////
   white: "#fff",
-  black: "#000"
-}
+  black: "#000",
+};
 
 const theme = createTheme({
   palette: {
@@ -49,8 +49,21 @@ const theme = createTheme({
       main: Colors.primary,
       light: Colors.grayLight,
       dark: Colors.grayDark,
-      contrastText: Colors.primary
-    }
+      contrastText: Colors.primary,
+    },
+  },
+  typography: {
+    typoEllipsis: {
+      fontSize: "0.875rem",
+      letterSpacing: "0.01071em",
+      fontWeight: 400,
+      lineHeight: 1.43,
+      display: "-webkit-box",
+      WebkitLineClamp: 3,
+      WebkitBoxOrient: "vertical",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
   },
 });
 

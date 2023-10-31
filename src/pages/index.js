@@ -5,9 +5,12 @@ import { Colors } from "../styles/theme";
 import { MemojiMain } from "../components/common/MemojiMain";
 import { ButtonLink } from "../components/Buttons/ButtonLink";
 import { MouseScroll } from "../components/common/MouseScrollIcon";
-import { Project } from "../components/Cards/Project";
+import { ProjectsCard } from "../components/Cards/ProjectsCard";
+import { projectsPortfolio } from "../utils/data";
 
 export default function Home() {
+  const PROJECT = projectsPortfolio[0];
+
   return (
     <>
       <Seo />
@@ -58,6 +61,8 @@ export default function Home() {
                 href="https://drive.google.com/file/d/1Qvve72H1VEA9HCWFCiM7wvGEYRLFWktn/view?usp=sharing"
                 iconComponent={<IconFileDownload />}
                 textButton="Ver CV"
+                fontBold
+                paddingButton
               />
             </Grid>
             <Grid item xs={12} md={6}>
@@ -66,6 +71,8 @@ export default function Home() {
                 backgroundColor="#F5F5F5"
                 iconComponent={<IconBrandInstagram />}
                 textButton="Sígueme en instagram"
+                fontBold
+                paddingButton
               />
             </Grid>
           </Grid>
@@ -86,7 +93,7 @@ export default function Home() {
         <Typography component="p" variant="body1">
           Este es un proyecto del que me siento orgulloso. :)
         </Typography>
-        <Project />
+        <ProjectsCard project={PROJECT} />
       </Box>
     </>
   );
