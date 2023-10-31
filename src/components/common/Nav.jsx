@@ -10,17 +10,20 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { IconCategory2 } from "@tabler/icons-react";
-import { IconBox } from "@tabler/icons-react";
-import { IconUser } from "@tabler/icons-react";
-import { IconSourceCode } from "@tabler/icons-react";
-import { IconBrandLinkedin } from "@tabler/icons-react";
-import { IconBrandGithub } from "@tabler/icons-react";
-import { IconBrandInstagram } from "@tabler/icons-react";
-import { IconX } from "@tabler/icons-react";
+import {
+  IconCategory2,
+  IconPointFilled,
+  IconBox,
+  IconUser,
+  IconSourceCode,
+  IconBrandLinkedin,
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconX,
+} from "@tabler/icons-react";
 import { Colors } from "../../styles/theme";
-import Link from "next/link";
 import { SocialIcon } from "./SocialIcon";
+import Link from "next/link";
 
 export function Nav() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -187,10 +190,12 @@ export function Nav() {
               <Typography>Ben</Typography>
             </Box>
           </Link>
-          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+          <Box
+            sx={{ display: { xs: "none", sm: "flex" }, alignItems: "center" }}
+          >
             <SocialIcon
-              href="https://www.instagram.com/benjamngarcia/"
-              icon={<IconBrandInstagram />}
+              href="https://github.com/Benjamngarcia"
+              icon={<IconBrandGithub />}
               style={styleSocialIcon}
             />
             <SocialIcon
@@ -198,6 +203,7 @@ export function Nav() {
               icon={<IconBrandLinkedin />}
               style={styleSocialIcon}
             />
+            <div className="point-icon" />
             {navItems.map((item) => (
               <Typography key={item.title}>
                 <Link href={item.link} className="links-styles">

@@ -1,69 +1,106 @@
-import {
-  Grid,
-  Typography,
-  Divider
-} from "@mui/material";
+import { Grid, Typography, Divider, Box } from "@mui/material";
 import { Colors } from "../../styles/theme";
-import { IconSourceCode } from '@tabler/icons-react';
-import { IconBrandLinkedin } from '@tabler/icons-react';
-import { IconBrandGithub } from '@tabler/icons-react';
-import { IconBrandInstagram } from '@tabler/icons-react';
-import { IconMailForward } from '@tabler/icons-react';
+import {
+  IconSourceCode,
+  IconBrandLinkedin,
+  IconBrandGithub,
+  IconBrandInstagram,
+} from "@tabler/icons-react";
 import { SocialIcon } from "./SocialIcon";
 import Link from "next/link";
+import MexicoFlag from "../../assets/svg/mexico-flag.svg";
+
+const footerItems = [
+  { title: "Sobre mí  ", link: "/about" },
+  { title: "Proyectos", link: "/projects" },
+];
 
 export function Footer() {
   return (
     <Grid
       container
       sx={{
-        marginTop: '16px',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        textAlign: 'center',
-        color: Colors.primary
+        margin: "16px auto",
+        padding: "16px",
+        justifyContent: "space-between",
+        alignItems: "center",
+        textAlign: "center",
+        color: Colors.primary,
       }}
     >
-      <Grid item xs={12} md={5}>
-        <Typography>🇲🇽</Typography>
-      </Grid>
-      <Grid item xs={12} md={7}>
-        <Typography>
-          <Link
-            href="mailto:benjamin.webdev3@gmail.com?Subject=Hola%20Benjamin!"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-              textDecoration: 'none',
-              color: Colors.primary,
-              margin: 'auto 8px',
-            }}
-          >
-            <IconMailForward />
-            Envíame un email.
-          </Link>
-        </Typography>
-      </Grid>
       <Grid item xs={12}>
-        <Divider sx={{ margin: '16px auto' }}>
+        <Divider sx={{ margin: "16px auto" }}>
           <IconSourceCode />
           <Typography>Ben</Typography>
         </Divider>
       </Grid>
-      <Grid item xs={12} md={7}>
-        <Typography>
-          <Link href="/" className="links-styles">
-            &copy; {new Date().getFullYear()} Benjamín García. Todos los derechos reservados.
-          </Link>
-        </Typography>
+      <Grid item xs={12} sm={6} sx={{ fontSize: "14px" }}>
+        <Link href="/" className="copyright">
+          &copy; {new Date().getFullYear()} Benjamín García
+        </Link>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            width: "fit-content",
+            margin: "auto",
+          }}
+        >
+          Hecho con ❤️ en
+          <Box
+            component="img"
+            src={MexicoFlag.src}
+            alt="Bandera de México"
+            sx={{ width: "24px" }}
+          />
+        </Box>
       </Grid>
-      <Grid item xs={12} md={5}>
-        <SocialIcon href="https://github.com/Benjamngarcia" icon={<IconBrandGithub />}/>
-        <SocialIcon href="https://www.linkedin.com/in/benjamngarcia" icon={<IconBrandLinkedin />}/>
-        <SocialIcon href="https://www.instagram.com/benjamngarcia/" icon={<IconBrandInstagram />}/>
+      <Grid
+        item
+        xs={12}
+        sm={6}
+        sx={{
+          marginTop: { xs: "16px", sm: "0px" },
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            margin: "auto",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
+          <div style={{ display: "flex" }}>
+            {footerItems.map((item) => (
+              <Link
+                key={item.title}
+                href={item.link}
+                className="links-footer-styles"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </div>
+          <div className="point-icon" />
+          <Box sx={{ display: "flex", marginTop: { xs: "8px", sm: "0px" } }}>
+            <SocialIcon
+              href="https://github.com/Benjamngarcia"
+              icon={<IconBrandGithub />}
+            />
+            <SocialIcon
+              href="https://www.linkedin.com/in/benjamngarcia"
+              icon={<IconBrandLinkedin />}
+            />
+            <SocialIcon
+              href="https://www.instagram.com/benjamngarcia/"
+              icon={<IconBrandInstagram />}
+            />
+          </Box>
+        </Box>
       </Grid>
     </Grid>
-  )
+  );
 }
