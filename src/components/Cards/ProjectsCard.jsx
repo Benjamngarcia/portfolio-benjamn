@@ -104,7 +104,7 @@ export function ProjectsCard({ project, isPortfolio }) {
                   <Chip
                     label={tech}
                     key={tech}
-                    sx={{ borderRadius: "8px", marginRight: "8px" }}
+                    sx={{ borderRadius: "8px", marginRight: "8px", marginBottom: "8px" }}
                   />
                 );
               })}

@@ -9,6 +9,7 @@ import { IconBrandLinkedin } from '@tabler/icons-react';
 import { IconBrandGithub } from '@tabler/icons-react';
 import { IconBrandInstagram } from '@tabler/icons-react';
 import { IconMailForward } from '@tabler/icons-react';
+import { SocialIcon } from "./SocialIcon";
 import Link from "next/link";
 
 export function Footer() {
@@ -59,27 +60,9 @@ export function Footer() {
         </Typography>
       </Grid>
       <Grid item xs={12} md={5}>
-        <Link
-          href="https://github.com/Benjamngarcia"
-          target="_blank"
-          className='links-styles social-icons'
-        >
-          <IconBrandGithub />
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/benjamngarcia"
-          target="_blank"
-          className='links-styles social-icons'
-        >
-          <IconBrandLinkedin />
-        </Link>
-        <Link
-          href="https://www.instagram.com/benjamngarcia/"
-          target="_blank"
-          className='links-styles social-icons'
-        >
-          <IconBrandInstagram />
-        </Link>
+        <SocialIcon href="https://github.com/Benjamngarcia" icon={<IconBrandGithub />}/>
+        <SocialIcon href="https://www.linkedin.com/in/benjamngarcia" icon={<IconBrandLinkedin />}/>
+        <SocialIcon href="https://www.instagram.com/benjamngarcia/" icon={<IconBrandInstagram />}/>
       </Grid>
     </Grid>
   )
