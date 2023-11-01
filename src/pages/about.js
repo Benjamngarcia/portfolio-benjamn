@@ -3,7 +3,9 @@ import { Box, Grid, Typography, CardMedia, Link } from "@mui/material";
 import { Colors } from "../styles/theme";
 import { stackTechnologies } from "../utils/data";
 import { TechnologyCard } from "../components/Cards/TechnologyCard";
+import Image from "next/image";
 import BenjaminImage from "../assets/img/benjamngarcia.png";
+import DictamigosImage from "../assets/img/dictamigos-team.png";
 
 function about() {
   return (
@@ -14,28 +16,17 @@ function about() {
       />
       <Box component="main">
         <Grid container>
-          <Grid
-            container
-            item
-            xs={12}
-            align="center"
-            justify="center"
-            sx={{ alignItems: "center", justifyContent: "center" }}
-          >
-            <Grid item>
-              <CardMedia
-                component="img"
-                alt="Benjamín Arturo Pérez García desarrollador web"
-                image={BenjaminImage.src}
-                sx={{
-                  width: "250px",
-                  height: "250px",
-                  margin: "auto",
-                  borderRadius: "10px",
-                }}
-              />
-            </Grid>
-          </Grid>
+          <Box
+            component="img"
+            alt="Benjamín Arturo Pérez García desarrollador web"
+            src={BenjaminImage.src}
+            style={{
+              width: "250px",
+              height: "250px",
+              borderRadius: "10px",
+              margin: "auto",
+            }}
+          />
           <Grid item xs={12} sx={{ color: Colors.primary, marginTop: "16px" }}>
             <Typography component="h1" variant="h5" fontWeight="bold">
               Sobre mí
@@ -58,26 +49,33 @@ function about() {
               <b> Frontend Developer, </b> e impulsar mi carrera profesional
               paralelo a mis estudios universitarios.
             </Typography>
-            <Typography component="h2" variant="h6" fontWeight="bold">
-              Tecnologías y herramientas:
-            </Typography>
-            <Box sx={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              {stackTechnologies.map((technology) => {
-                return (
-                  <TechnologyCard
-                    key={technology.name}
-                    link={technology.link}
-                    icon={technology.icon}
-                    color={technology.color}
-                    backgroundColor={technology.backgroundColor}
-                    name={technology.name}
-                  />
-                );
-              })}
+            <Box sx={{ margin: "16px 0px" }}>
+              <Typography component="h2" variant="h6" fontWeight="bold">
+                Tecnologías y herramientas:
+              </Typography>
+              <Typography component="p" variant="body1" textAlign="justify">
+                Estás son algunos de los lenguajes de programación y
+                herramientas que he utilizado a lo largo de mi carrera como
+                desarrollador web y especialmente mis favoritas
+              </Typography>
+              <Box sx={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                {stackTechnologies.map((technology) => {
+                  return (
+                    <TechnologyCard
+                      key={technology.name}
+                      link={technology.link}
+                      icon={technology.icon}
+                      color={technology.color}
+                      backgroundColor={technology.backgroundColor}
+                      name={technology.name}
+                    />
+                  );
+                })}
+              </Box>
             </Box>
             <Typography component="p" variant="body1" textAlign="justify">
               Una de las experiencias más gratificantes para mí es compartir lo
-              que he aprendido con otros, y eso me llevó juntar a personas que
+              que he aprendido con otros y eso me llevó juntar a personas que
               les apasionara lo mismo que a mí y juntos fundar
               <Link
                 href="https://dictamigos.xyz/"
@@ -90,6 +88,26 @@ function about() {
               una comunidad de programadores donde ayudamos a las personas a
               adentrarse en el emocionante mundo de la tecnología.
             </Typography>
+            <Box
+              sx={{
+                width: { xs: "100%", sm: "380px" },
+                margin: "auto",
+                padding: "16px 0px",
+              }}
+            >
+              <Box
+                component="img"
+                alt="Equipo de Dictamigos en las Binary Talks v2"
+                src={DictamigosImage.src}
+                sx={{
+                  width: "100%",
+                  borderRadius: "10px",
+                }}
+              />
+              <Typography component="p" variant="body2" textAlign="justify">
+                Dictamigos, como quiero a Dictamigos. 
+              </Typography>
+            </Box>
             <Typography component="p" variant="body1" textAlign="justify">
               Además de investigar y practicar nuevos lenguajes de programación,
               soy entusiasta de descubrir otras áreas fuera del código como el
