@@ -6,11 +6,11 @@ import {
   Card,
   CardActions,
   CardContent,
-  Chip,
 } from "@mui/material";
 import { IconCaretRight } from "@tabler/icons-react";
 import { IconFolderFilled } from "@tabler/icons-react";
 import { ButtonLink } from "../Buttons/ButtonLink";
+import { CustomChip } from "../common/CustomChip";
 
 export function ProjectsCard({ project, isPortfolio }) {
   return isPortfolio ? (
@@ -25,26 +25,17 @@ export function ProjectsCard({ project, isPortfolio }) {
         <Typography gutterBottom variant="h5" component="h5" color="primary">
           {project.title}
         </Typography>
-        <Typography
-          variant="typoEllipsis"
-          color="text.secondary"
-        >
+        <Typography variant="typoEllipsis" color="text.secondary">
           {project.description}
         </Typography>
-        <Box sx={{ textAlign: "center" }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           {project.technologies.slice(0, 3).map((tech) => {
-            return (
-              <Chip
-                label={tech}
-                key={tech}
-                sx={{ borderRadius: "8px", margin: "16px 5px 5px 5px" }}
-              />
-            );
+            return <CustomChip tech={tech} key={tech} />;
           })}
         </Box>
       </CardContent>
       <CardActions>
-        <Grid container spacing={2} sx={{ padding: "0px 16px" }}>
+        <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <ButtonLink
               variant="contained"
@@ -94,25 +85,16 @@ export function ProjectsCard({ project, isPortfolio }) {
               gutterBottom
               variant="h5"
               component="h5"
-              color="primary"
+              color="dark"
             >
               {project.title}
             </Typography>
             <Box sx={{ marginTop: "8px" }}>
               {project.technologies.slice(0, 3).map((tech) => {
-                return (
-                  <Chip
-                    label={tech}
-                    key={tech}
-                    sx={{ borderRadius: "8px", marginRight: "8px", marginBottom: "8px" }}
-                  />
-                );
+                return <CustomChip tech={tech} key={tech} isBigger />;
               })}
             </Box>
-            <Typography
-              variant="typoEllipsis"
-              color="text.secondary"
-            >
+            <Typography variant="typoEllipsis" color="text.secondary">
               {project.description}
             </Typography>
           </CardContent>

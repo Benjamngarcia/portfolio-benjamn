@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import {
   IconCategory2,
-  IconPointFilled,
   IconBox,
   IconUser,
   IconSourceCode,

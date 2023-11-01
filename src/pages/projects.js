@@ -43,10 +43,10 @@ function projects() {
                 xs={12}
                 sm={6}
                 md={4}
-                sx={{ marginTop: "16px", display: "flex" }}
+                sx={{ marginTop: { xs: "16px", md: "32px" }, display: "flex" }}
                 key={project.title}
               >
-                <ProjectsCard project={project} isPortfolio/>
+                <ProjectsCard project={project} isPortfolio />
               </Grid>
             );
           })}
