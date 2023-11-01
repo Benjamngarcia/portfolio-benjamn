@@ -57,7 +57,7 @@ export function Nav() {
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <IconSourceCode />
-            <Typography>Ben</Typography>
+            <Typography sx={{ fontSize: "0.9rem" }}>Ben</Typography>
           </Box>
         </Link>
         <IconButton onClick={handleDrawerToggle}>
@@ -186,7 +186,7 @@ export function Nav() {
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <IconSourceCode />
-              <Typography>Ben</Typography>
+              <Typography sx={{ fontSize: "0.9rem" }}>Ben</Typography>
             </Box>
           </Link>
           <Box

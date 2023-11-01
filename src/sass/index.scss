@@ -2,15 +2,15 @@
   text-decoration: none !important;
   color: #434B4D !important;
   margin: auto 8px !important;
-  font-weight: bold !important;
-  transition: 0.3s !important;
+  transition: all 0.3s ease !important;
+  font-size: 0.9rem;
 }
 
 .links-footer-styles {
   text-decoration: none !important;
   color: #434B4D !important;
   margin: auto 4px !important;
-  transition: 0.3s !important;
+  transition: all 0.3s ease !important;
   font-size: 0.8rem;
 }
 
@@ -21,11 +21,16 @@
 }
 
 .social-icons {
-  transition: 0.3s !important;
+  transition: all 0.3s ease !important;
   display: flex;
   align-items: center;
+  
   &:hover {
     color: #70b0f2 !important;
+  }
+
+  svg {
+    stroke-width: 1.2px;
   }
 }
 

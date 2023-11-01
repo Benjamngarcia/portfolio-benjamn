@@ -31,7 +31,7 @@ export function Footer() {
       <Grid item xs={12}>
         <Divider sx={{ margin: "16px auto" }}>
           <IconSourceCode />
-          <Typography>Ben</Typography>
+          <Typography sx={{ fontSize: "0.9rem" }}>Ben</Typography>
         </Divider>
       </Grid>
       <Grid item xs={12} sm={6} sx={{ fontSize: "14px" }}>
