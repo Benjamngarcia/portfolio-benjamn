@@ -1,13 +1,8 @@
 import { Seo } from "../components/Seo";
 import { Box, Grid, Typography, CardMedia, Link } from "@mui/material";
-import {
-  IconBrandJavascript,
-  IconBrandReact,
-  IconBrandNextjs,
-  IconBrandMysql,
-  IconBrandMongodb,
-} from "@tabler/icons-react";
 import { Colors } from "../styles/theme";
+import { stackTechnologies } from "../utils/data";
+import { TechnologyCard } from "../components/Cards/TechnologyCard";
 import BenjaminImage from "../assets/img/benjamngarcia.png";
 
 function about() {
@@ -63,26 +58,22 @@ function about() {
               <b> Frontend Developer, </b> e impulsar mi carrera profesional
               paralelo a mis estudios universitarios.
             </Typography>
-            <Typography component="p" variant="body1" textAlign="justify">
-              Las tecnologías que <b>más uso actualmente</b> son: Javascript
-              Vanilla, React, Node, Next, MySQL y MongoDB.
+            <Typography component="h2" variant="h6" fontWeight="bold">
+              Tecnologías y herramientas:
             </Typography>
-            <Box>
-              <Link href="https://www.javascript.com/" target="_blank">
-                <IconBrandJavascript width={35} height={35} color="#F7DF1E" />
-              </Link>
-              <Link href="https://react.dev/" target="_blank">
-                <IconBrandReact width={35} height={35} color="#61dbfb" />
-              </Link>
-              <Link href="https://nextjs.org/" target="_blank">
-                <IconBrandNextjs width={35} height={35} color="#000000" />
-              </Link>
-              <Link href="https://www.mysql.com/" target="_blank">
-                <IconBrandMysql width={35} height={35} color="#00758F" />
-              </Link>
-              <Link href="https://www.mongodb.com/" target="_blank">
-                <IconBrandMongodb width={35} height={35} color="#589636" />
-              </Link>
+            <Box sx={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+              {stackTechnologies.map((technology) => {
+                return (
+                  <TechnologyCard
+                    key={technology.name}
+                    link={technology.link}
+                    icon={technology.icon}
+                    color={technology.color}
+                    backgroundColor={technology.backgroundColor}
+                    name={technology.name}
+                  />
+                );
+              })}
             </Box>
             <Typography component="p" variant="body1" textAlign="justify">
               Una de las experiencias más gratificantes para mí es compartir lo

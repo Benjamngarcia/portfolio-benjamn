@@ -12,7 +12,7 @@ export const CustomChip = ({ tech, isBigger }) => {
         borderRadius: "8px",
         margin: !isBigger ? "8px 0px 0px 0px" : "0px 8px 8px 0px",
         borderColor: Colors.secondary,
-        transition: "0.4s",
+        transition: "all 0.4s ease",
         "&:hover": {
           borderColor: Colors.secondaryDark,
           transform: "scale(1.1)",
