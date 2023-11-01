@@ -2,6 +2,7 @@ import DictamigosImage from "../assets/img/dictamigos-project.png";
 import PortfolioImage from "../assets/img/portfolio-project.png";
 import CatarinaImage from "../assets/img/catarina-project.png";
 import PokeduxImage from "../assets/img/pokedux-project.png";
+import WeatherImage from "../assets/img/weather-project.png";
 
 import {
   IconBrandJavascript,
@@ -13,7 +14,7 @@ import {
   IconBrandPython,
   IconBrandFigma,
   IconBrandGit,
-  IconBrandSass
+  IconBrandSass,
 } from "@tabler/icons-react";
 
 import { NodejsIcon } from "../components/Icons/NodejsIcon";
@@ -26,14 +27,7 @@ export const projectsPortfolio = [
     demo: "https://www.dictamigos.xyz/",
     repo: "https://github.com/DICTAMIGOS",
     img: DictamigosImage.src,
-    technologies: [
-      "NextJS",
-      "Express",
-      "MongoDB",
-      "NodeJS",
-      "MaterialUI",
-      "SASS",
-    ],
+    technologies: ["NextJS", "MDX", "MaterialUI", "SASS"],
   },
   {
     title: "Personal Portfolio",
@@ -68,6 +62,22 @@ export const projectsPortfolio = [
     repo: "https://github.com/Benjamngarcia/Pokedux",
     img: PokeduxImage.src,
     technologies: ["React", "Redux", "MaterialUI", "Redux toolkit", "Axios"],
+  },
+  {
+    title: "Weather App",
+    description:
+      "Aplicación del clima realizada como prueba tecnica para la empresa en la cual laboro actualmente, con el fin de mostrar mis habilidades como desarrollador frontend.",
+    repo: "https://github.com/Benjamngarcia/weather-app",
+    demo: "https://weather-app-fawn-gamma.vercel.app/",
+    img: WeatherImage.src,
+    technologies: [
+      "React",
+      "Typescript",
+      "TailwindCSS",
+      "Vite",
+      "Axios",
+      "Jest",
+    ],
   },
 ];
 
