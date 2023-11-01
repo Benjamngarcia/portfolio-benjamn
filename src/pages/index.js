@@ -24,12 +24,11 @@ export default function Home() {
               ¡Hola! Yo soy Benjamín 👋🏽
             </Typography>
             <Typography variant="body1" sx={{ marginTop: "16px" }}>
-              Soy un apasionado <b>desarrollador web</b> y me encanta hablar
+              Soy un apasionado <b>Desarrollador Web Fullstack</b>, con principal
+              experiencia en el desarrollo Frontend y en <b>proyectos freelance</b> y me encanta hablar
               sobre todo lo relacionado con el mundo del desarrollo de software,
-              por lo que soy muy activo en las comunidades de desarrolladores.
-            </Typography>
-            <Typography>
-              Junto con mis amigos fundé
+              por lo que soy muy activo en las comunidades de programadores.
+              Junto con mis mejores amigos fundé
               <Link
                 href="https://dictamigos.xyz/"
                 target="_blank"
@@ -44,11 +43,8 @@ export default function Home() {
             <Typography variant="body1">
               Actualmente me encuentro enfocado en el área del desarrollo
               Frontend, sin embargo también disfruto practicar otras
-              tecnologías.
-            </Typography>
-            <Typography>
-              Conclusión, si necesitas ayuda para ingresar al mundo del
-              desarrollo de software o tienes curiosidad por saber más sobre mí,{" "}
+              tecnologías.Si necesitas ayuda para ingresar al mundo del
+              desarrollo de software o tienes curiosidad por saber más sobre mi trabajo,{" "}
               <b>¡no dudes en contactarme!</b> Me encantaría compartir mi pasión
               contigo y ayudarte en todo lo me sea posible.
             </Typography>
