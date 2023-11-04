@@ -176,7 +176,7 @@ export function Nav() {
     <>
       <AppBar
         component="nav"
-        sx={{ backgroundColor: "white", boxShadow: "none", position: "static" }}
+        sx={{ backgroundColor: "transparent", boxShadow: "none", position: "static" }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Link

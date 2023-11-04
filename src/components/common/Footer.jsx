@@ -20,7 +20,7 @@ export function Footer() {
     <Grid
       container
       sx={{
-        margin: "16px auto",
+        margin: "16px auto 0px auto",
         padding: "16px",
         justifyContent: "space-between",
         alignItems: "center",
@@ -47,7 +47,7 @@ export function Footer() {
             margin: "auto",
           }}
         >
-          Hecho con ❤️ en
+          Hecho con 💙 en
           <Box
             component="img"
             src={MexicoFlag.src}

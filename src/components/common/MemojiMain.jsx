@@ -9,6 +9,8 @@ export const MemojiMain = () => {
     <Box
       sx={{
         display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         backgroundColor: Colors.secondary,
         width: "88px",
         height: "88px",
@@ -18,8 +20,8 @@ export const MemojiMain = () => {
       }}
     >
       <Image
-        width={72}
-        height={72}
+        width={70}
+        height={70}
         component="img"
         alt="Benjamín Arturo Pérez García desarrollador web"
         src={MainImage.src}
