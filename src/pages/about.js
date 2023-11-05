@@ -104,7 +104,7 @@ function about() {
                 }}
               />
               <Typography component="p" variant="body2" textAlign="justify">
-                Dictamigos, como quiero a Dictamigos. 
+                Dictamigos, como quiero a Dictamigos. 🫶🏽
               </Typography>
             </Box>
             <Typography component="p" variant="body1" textAlign="justify">

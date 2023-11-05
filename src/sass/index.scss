@@ -1,6 +1,6 @@
 .links-styles {
   text-decoration: none !important;
-  color: #434B4D !important;
+  color: #434b4d !important;
   margin: auto 8px !important;
   transition: all 0.3s ease !important;
   font-size: 0.9rem;
@@ -8,7 +8,7 @@
 
 .links-footer-styles {
   text-decoration: none !important;
-  color: #434B4D !important;
+  color: #434b4d !important;
   margin: auto 4px !important;
   transition: all 0.3s ease !important;
   font-size: 0.8rem;
@@ -16,7 +16,7 @@
 
 .copyright {
   text-decoration: none !important;
-  color: #434B4D !important;
+  color: #434b4d !important;
   margin: auto 8px !important;
 }
 
@@ -24,7 +24,7 @@
   transition: all 0.3s ease !important;
   display: flex;
   align-items: center;
-  
+
   &:hover {
     color: #70b0f2 !important;
   }
@@ -42,7 +42,7 @@
     width: 3px;
     padding: 8px 12px;
     height: 20px;
-    border: 2px solid #434B4D;
+    border: 2px solid #434b4d;
     border-radius: 25px;
     opacity: 0.75;
     box-sizing: content-box;
@@ -51,7 +51,7 @@
       width: 3px;
       height: 10px;
       border-radius: 25%;
-      background-color: #434B4D;
+      background-color: #434b4d;
       animation-name: scroll;
       animation-duration: 1.5s;
       animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
@@ -77,12 +77,36 @@
 }
 
 .point-icon {
-  background-color: #434B4D !important;
+  background-color: #434b4d !important;
   width: 3px;
   height: 3px;
   border-radius: 50%;
   margin: auto 8px;
   display: none;
+}
+
+.link-button {
+  background-color: #70b0f2;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  &:hover {
+    background-color: #4c99e9;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    scale: 1.02;
+  }
 }
 
 @media (min-width: 768px) {

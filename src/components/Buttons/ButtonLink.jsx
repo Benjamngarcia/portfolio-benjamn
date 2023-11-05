@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import Link from "next/link";
 
 export const ButtonLink = ({
   iconComponent,
@@ -7,9 +8,15 @@ export const ButtonLink = ({
   backgroundColor,
   paddingButton,
   textButton,
+  linkPage,
   ...rest
 }) => {
-  return (
+  return linkPage ? (
+    <Link {...rest} className="link-button">
+      {iconComponent}
+      {textButton}
+    </Link>
+  ) : (
     <Button
       {...rest}
       startIcon={iconComponent}
@@ -22,6 +29,10 @@ export const ButtonLink = ({
         justifyContent: iconCenter ? "center" : "flex-start",
         borderRadius: "8px",
         backgroundColor: backgroundColor,
+        transition: "all 0.3s ease",
+        "&:hover": {
+          scale: "1.03",
+        },
       }}
     >
       {textButton}
