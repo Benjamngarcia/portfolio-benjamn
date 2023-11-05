@@ -11,6 +11,7 @@ export default function MainLayout(props) {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     height: "100%",
+    minHeight: "100vh"
   };
 
   return (

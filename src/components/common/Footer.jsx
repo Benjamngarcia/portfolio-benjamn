@@ -13,6 +13,7 @@ import MexicoFlag from "../../assets/svg/mexico-flag.svg";
 const footerItems = [
   { title: "Sobre mí  ", link: "/about" },
   { title: "Proyectos", link: "/projects" },
+  { title: "Contacto", link: "/contact" }
 ];
 
 export function Footer() {
@@ -85,7 +86,7 @@ export function Footer() {
             ))}
           </div>
           <div className="point-icon" />
-          <Box sx={{ display: "flex", marginTop: { xs: "8px", sm: "0px" } }}>
+          <Box sx={{ display: "flex", marginTop: { xs: "8px", sm: "0px" }, justifyContent: "center" }}>
             <SocialIcon
               href="https://github.com/Benjamngarcia"
               icon={<IconBrandGithub />}

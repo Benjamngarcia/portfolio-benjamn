@@ -17,6 +17,18 @@ import {
   IconBrandSass,
 } from "@tabler/icons-react";
 
+import {
+  IconCategory2,
+  IconBox,
+  IconUser,
+  IconSourceCode,
+  IconBrandLinkedin,
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconAt,
+  IconX,
+} from "@tabler/icons-react";
+
 import { NodejsIcon } from "../components/Icons/NodejsIcon";
 
 export const projectsPortfolio = [
@@ -148,4 +160,31 @@ export const stackTechnologies = [
     color: "#0ACF83",
     link: "https://www.figma.com/",
   },
+];
+
+export const socialNetworksButtons = [
+  {
+    name: "LinkedIn",
+    description: "Conecta conmigo en LinkedIn",
+    icon: <IconBrandLinkedin />,
+    link: "https://www.linkedin.com/in/benjamngarcia"
+  },
+  {
+    name: "GitHub",
+    description: "Ve mis proyectos en GitHub",
+    icon: <IconBrandGithub />,
+    link: "https://github.com/Benjamngarcia"
+  },
+  {
+    name: "Instagram",
+    description: "Agrégame en Instagram",
+    icon: <IconBrandInstagram />,
+    link: "https://www.instagram.com/benjamngarcia/"
+  },
+  {
+    name: "Email",
+    description: "Envíame un correo",
+    icon: <IconAt />,
+    link: "mailto:benjamn.webdev3@gmail.com"
+  }
 ];

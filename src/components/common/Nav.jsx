@@ -18,6 +18,7 @@ import {
   IconBrandLinkedin,
   IconBrandGithub,
   IconBrandInstagram,
+  IconBrandTelegram,
   IconX,
 } from "@tabler/icons-react";
 import { Colors } from "../../styles/theme";
@@ -29,6 +30,7 @@ export function Nav() {
   const navItems = [
     { title: "Sobre mí  ", link: "/about", icon: <IconUser /> },
     { title: "Proyectos", link: "/projects", icon: <IconBox /> },
+    { title: "Contacto", link: "/contact", icon: <IconBrandTelegram /> },
   ];
 
   const styleSocialIcon = {
