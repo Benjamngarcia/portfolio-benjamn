@@ -12,6 +12,7 @@ export const Colors = {
   info: "#00a2ff",
   danger: "#FFB72F",
   warning: "#FFD92F",
+  error: "#d32f2f",
   dark: "#0c1012",
   ligth: "#aaa",
   muted: "#646369",
@@ -60,6 +61,32 @@ const theme = createTheme({
       WebkitBoxOrient: "vertical",
       overflow: "hidden",
       textOverflow: "ellipsis",
+    },
+  },
+  components: {
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          border: `1px solid ${Colors.primaryDark}`,
+          borderRadius: "8px",
+          padding: "8px",
+          transition: "0.2s all ease-in-out",
+          "&.Mui-error": {
+            borderColor: Colors.error,
+            boxShadow: "0 0 0 0.2rem rgba(211, 47, 47, 0.25)",
+          },
+          "&:focus-within": {
+            borderColor: Colors.secondary,
+            boxShadow: "0 0 0 0.2rem rgba(112, 176, 242, 0.25)",
+          },
+          "& .MuiInputBase-input": {
+            color: Colors.primary,
+            "&::placeholder": {
+              color: Colors.primary,
+            }
+          }
+        },
+      },
     },
   },
 });
