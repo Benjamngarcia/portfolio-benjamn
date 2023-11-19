@@ -1,7 +1,17 @@
-import { useState } from "react";
-import { Box, Button, InputBase, InputLabel, FormControl } from "@mui/material";
+import { useState, useEffect } from "react";
+import {
+  Box,
+  Button,
+  InputBase,
+  InputLabel,
+  CircularProgress,
+  Alert,
+} from "@mui/material";
+import emailjs from "@emailjs/browser";
 
 export function ContactForm() {
+  const [loadingEmail, setLoadingEmail] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -46,16 +56,29 @@ export function ContactForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const isValid = validateForm();
-
-    if (isValid) {
-      console.log("Name: ", name);
-      console.log("Email: ", email);
-      console.log("Message: ", message);
+    const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    try {
+      setLoadingEmail(true);
+      const isValid = validateForm();
+      await emailjs.send(serviceId, templateId, {
+        name,
+        email,
+        message,
+      });
+      setEmailSent(true);
+      if (isValid) {
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoadingEmail(false);
     }
   };
+
+  useEffect(() => emailjs.init(process.env.NEXT_PUBLIC_PUBLIC_KEY), []);
 
   return (
     <Box
@@ -105,6 +128,7 @@ export function ContactForm() {
       <Button
         variant="contained"
         color="secondary"
+        disabled={loadingEmail}
         sx={{
           borderRadius: "8px",
           textTransform: "none",
@@ -112,8 +136,14 @@ export function ContactForm() {
         }}
         onClick={handleSubmit}
       >
-        Enviar mensaje
+        {!loadingEmail ? "Enviar mensaje" : <CircularProgress size={20} />}
       </Button>
+      {emailSent && (
+        <Alert severity="success">
+          Tu email se ha enviado correctamente! Me contactaré contigo lo más
+          pronto posible.
+        </Alert>
+      )}
     </Box>
   );
 }
