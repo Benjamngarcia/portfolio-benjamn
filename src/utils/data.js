@@ -3,6 +3,8 @@ import PortfolioImage from "../assets/img/portfolio-project.png";
 import CatarinaImage from "../assets/img/catarina-project.png";
 import PokeduxImage from "../assets/img/pokedux-project.png";
 import WeatherImage from "../assets/img/weather-project.png";
+import EliteCoach from "../assets/img/elite-coach-project.png";
+import Dashboard from "../assets/img/dashboard-project.png";
 
 import {
   IconBrandJavascript,
@@ -15,29 +17,36 @@ import {
   IconBrandFigma,
   IconBrandGit,
   IconBrandSass,
+  IconBrandGraphql,
+  IconBrandTailwind,
+  IconBrandSlack,
+  IconBrandAuth0,
+  IconBrandFirebase,
 } from "@tabler/icons-react";
 
 import {
-  IconCategory2,
-  IconBox,
-  IconUser,
-  IconSourceCode,
   IconBrandLinkedin,
   IconBrandGithub,
   IconBrandInstagram,
   IconAt,
-  IconX,
 } from "@tabler/icons-react";
 
 import { NodejsIcon } from "../components/Icons/NodejsIcon";
 
 export const projectsPortfolio = [
   {
+    title: "Elite Coach",
+    description:
+      "Aplicación para agendar asesorías online y presenciales con entrenadores profesionales y recibir tus planes de entrenamiento personalizados.",
+    demo: "https://www.elite-coach.com.mx/",
+    img: EliteCoach.src,
+    technologies: ["NextJS", "Express", "Mercado Pago", "Typescript"],
+  },
+  {
     title: "Dictamigos",
     description:
       "Comunidad de desarrolladores que busca facilitar comenzar en el mundo del desarrollo, por medio de contenido educativo.",
-    demo: "https://www.dictamigos.xyz/",
-    repo: "https://github.com/DICTAMIGOS",
+    demo: "https://dictamigos-oficial-web-dictamigos.vercel.app/",
     img: DictamigosImage.src,
     technologies: ["NextJS", "MDX", "MaterialUI", "SASS"],
   },
@@ -65,6 +74,15 @@ export const projectsPortfolio = [
       "Bootstrap",
       "Express",
     ],
+  },
+  {
+    title: "User dashboard",
+    description:
+      "Aplicación para mostrar y filtrar información, con la posibilidad de eliminar usuarios. La aplicación consume una API REST de usuarios y muestra operaciones CRUD, paginación y diseños modernos.",
+    demo: "https://user-dashboard-sooty.vercel.app/",
+    repo: "https://github.com/Benjamngarcia/user-dashboard",
+    img: Dashboard.src,
+    technologies: ["NextJS", "TypeScript", "Tailwind CSS"],
   },
   {
     title: "Pokedux",
@@ -107,10 +125,10 @@ export const stackTechnologies = [
     link: "https://www.typescriptlang.org/",
   },
   {
-    name: "Python",
-    icon: <IconBrandPython />,
-    color: "#3776AB",
-    link: "https://www.python.org/",
+    name: "React",
+    icon: <IconBrandReact />,
+    color: "#61dbfb",
+    link: "https://react.dev/",
   },
   {
     name: "NodeJS",
@@ -119,10 +137,16 @@ export const stackTechnologies = [
     link: "https://nodejs.org/",
   },
   {
-    name: "React",
-    icon: <IconBrandReact />,
-    color: "#61dbfb",
-    link: "https://react.dev/",
+    name: "Graph QL",
+    icon: <IconBrandGraphql  />,
+    color: "#E535AB",
+    link: "https://graphql.org/",
+  },
+  {
+    name: "Python",
+    icon: <IconBrandPython />,
+    color: "#3776AB",
+    link: "https://www.python.org/",
   },
   {
     name: "NextJS",
@@ -149,16 +173,40 @@ export const stackTechnologies = [
     link: "https://git-scm.com/",
   },
   {
+    name: "Auth0",
+    icon: <IconBrandAuth0 />,
+    color: "#EB5424",
+    link: "https://auth0.com/",
+  },
+  {
+    name: "Firebase",
+    icon: <IconBrandFirebase />,
+    color: "#FFCA28",
+    link: "https://firebase.google.com/",
+  },
+  {
     name: "Sass",
     icon: <IconBrandSass />,
     color: "#CC6699",
     link: "https://sass-lang.com/",
   },
   {
+    name: "TailwindCSS",
+    icon: <IconBrandTailwind />,
+    color: "#38B2AC",
+    link: "https://tailwindcss.com/",
+  },
+  {
     name: "Figma",
     icon: <IconBrandFigma />,
     color: "#0ACF83",
     link: "https://www.figma.com/",
+  },
+  {
+    name: "Slack",
+    icon: <IconBrandSlack />,
+    color: "#4A154B",
+    link: "https://slack.com/",
   },
 ];
 
