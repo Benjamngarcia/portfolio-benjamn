@@ -3,6 +3,8 @@ import PortfolioImage from "../assets/img/portfolio-project.png";
 import CatarinaImage from "../assets/img/catarina-project.png";
 import PokeduxImage from "../assets/img/pokedux-project.png";
 import WeatherImage from "../assets/img/weather-project.png";
+import EliteCoach from "../assets/img/elite-coach-project.png";
+import Dashboard from "../assets/img/dashboard-project.png";
 
 import {
   IconBrandJavascript,
@@ -18,26 +20,28 @@ import {
 } from "@tabler/icons-react";
 
 import {
-  IconCategory2,
-  IconBox,
-  IconUser,
-  IconSourceCode,
   IconBrandLinkedin,
   IconBrandGithub,
   IconBrandInstagram,
   IconAt,
-  IconX,
 } from "@tabler/icons-react";
 
 import { NodejsIcon } from "../components/Icons/NodejsIcon";
 
 export const projectsPortfolio = [
   {
+    title: "Elite Coach",
+    description:
+      "Aplicación para agendar asesorías online y presenciales con entrenadores profesionales y recibir tus planes de entrenamiento personalizados.",
+    demo: "https://www.elite-coach.com.mx/",
+    img: EliteCoach.src,
+    technologies: ["NextJS", "Express", "Mercado Pago", "Typescript"],
+  },
+  {
     title: "Dictamigos",
     description:
       "Comunidad de desarrolladores que busca facilitar comenzar en el mundo del desarrollo, por medio de contenido educativo.",
-    demo: "https://www.dictamigos.xyz/",
-    repo: "https://github.com/DICTAMIGOS",
+    demo: "https://dictamigos-oficial-web-dictamigos.vercel.app/",
     img: DictamigosImage.src,
     technologies: ["NextJS", "MDX", "MaterialUI", "SASS"],
   },
@@ -65,6 +69,15 @@ export const projectsPortfolio = [
       "Bootstrap",
       "Express",
     ],
+  },
+  {
+    title: "User dashboard",
+    description:
+      "Aplicación para mostrar y filtrar información, con la posibilidad de eliminar usuarios. La aplicación consume una API REST de usuarios y muestra operaciones CRUD, paginación y diseños modernos.",
+    demo: "https://user-dashboard-sooty.vercel.app/",
+    repo: "https://github.com/Benjamngarcia/user-dashboard",
+    img: Dashboard.src,
+    technologies: ["NextJS", "TypeScript", "Tailwind CSS"],
   },
   {
     title: "Pokedux",
