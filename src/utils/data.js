@@ -17,6 +17,11 @@ import {
   IconBrandFigma,
   IconBrandGit,
   IconBrandSass,
+  IconBrandGraphql,
+  IconBrandTailwind,
+  IconBrandSlack,
+  IconBrandAuth0,
+  IconBrandFirebase,
 } from "@tabler/icons-react";
 
 import {
@@ -132,6 +137,12 @@ export const stackTechnologies = [
     link: "https://nodejs.org/",
   },
   {
+    name: "Graph QL",
+    icon: <IconBrandGraphql  />,
+    color: "#E535AB",
+    link: "https://graphql.org/",
+  },
+  {
     name: "Python",
     icon: <IconBrandPython />,
     color: "#3776AB",
@@ -162,16 +173,40 @@ export const stackTechnologies = [
     link: "https://git-scm.com/",
   },
   {
+    name: "Auth0",
+    icon: <IconBrandAuth0 />,
+    color: "#EB5424",
+    link: "https://auth0.com/",
+  },
+  {
+    name: "Firebase",
+    icon: <IconBrandFirebase />,
+    color: "#FFCA28",
+    link: "https://firebase.google.com/",
+  },
+  {
     name: "Sass",
     icon: <IconBrandSass />,
     color: "#CC6699",
     link: "https://sass-lang.com/",
   },
   {
+    name: "TailwindCSS",
+    icon: <IconBrandTailwind />,
+    color: "#38B2AC",
+    link: "https://tailwindcss.com/",
+  },
+  {
     name: "Figma",
     icon: <IconBrandFigma />,
     color: "#0ACF83",
     link: "https://www.figma.com/",
+  },
+  {
+    name: "Slack",
+    icon: <IconBrandSlack />,
+    color: "#4A154B",
+    link: "https://slack.com/",
   },
 ];
 
