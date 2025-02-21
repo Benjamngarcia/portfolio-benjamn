@@ -1,5 +1,5 @@
 import { Seo } from "../components/Seo";
-import { Box, Grid, Typography, CardMedia, Link } from "@mui/material";
+import { Box, Grid, Typography, Link } from "@mui/material";
 import { Colors } from "../styles/theme";
 import { stackTechnologies } from "../utils/data";
 import { TechnologyCard } from "../components/Cards/TechnologyCard";

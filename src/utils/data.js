@@ -120,10 +120,10 @@ export const stackTechnologies = [
     link: "https://www.typescriptlang.org/",
   },
   {
-    name: "Python",
-    icon: <IconBrandPython />,
-    color: "#3776AB",
-    link: "https://www.python.org/",
+    name: "React",
+    icon: <IconBrandReact />,
+    color: "#61dbfb",
+    link: "https://react.dev/",
   },
   {
     name: "NodeJS",
@@ -132,10 +132,10 @@ export const stackTechnologies = [
     link: "https://nodejs.org/",
   },
   {
-    name: "React",
-    icon: <IconBrandReact />,
-    color: "#61dbfb",
-    link: "https://react.dev/",
+    name: "Python",
+    icon: <IconBrandPython />,
+    color: "#3776AB",
+    link: "https://www.python.org/",
   },
   {
     name: "NextJS",

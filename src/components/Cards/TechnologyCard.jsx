@@ -17,7 +17,6 @@ export const TechnologyCard = ({
   link,
   icon,
   color,
-  backgroundColor,
   name,
 }) => {
   return (
