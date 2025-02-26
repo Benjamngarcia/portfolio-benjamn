@@ -5,6 +5,7 @@ import PokeduxImage from "../assets/img/pokedux-project.png";
 import WeatherImage from "../assets/img/weather-project.png";
 import EliteCoach from "../assets/img/elite-coach-project.png";
 import Dashboard from "../assets/img/dashboard-project.png";
+import ReadmeBuilder from "../assets/img/readme-project.png";
 
 import {
   IconBrandJavascript,
@@ -41,6 +42,15 @@ export const projectsPortfolio = [
     demo: "https://www.elite-coach.com.mx/",
     img: EliteCoach.src,
     technologies: ["NextJS", "Express", "Mercado Pago", "Typescript"],
+  },
+  {
+    title: "Readme Builder",
+    description:
+      "Herramienta para generar un archivo README.md de tus proyectos de GitHub, con la información básica y necesaria para mostrar tus proyectos.",
+    demo: "https://readmes-builder.vercel.app/",
+    repo: "https://github.com/Benjamngarcia/readme-builder",
+    img: ReadmeBuilder.src,
+    technologies: ["NextJS", "Tailwind CSS", "Typescript"],
   },
   {
     title: "Dictamigos",
