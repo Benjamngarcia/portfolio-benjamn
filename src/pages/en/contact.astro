@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../utils/i18n';
+import { socialNetworks } from '../../data/portfolio';
+import ContactForm from '../../components/ContactForm';
+import { IconBrandLinkedin, IconBrandGithub, IconBrandInstagram, IconAt } from '@tabler/icons-react';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const iconMap: Record<string, any> = {
+  'LinkedIn': IconBrandLinkedin,
+  'GitHub': IconBrandGithub,
+  'Instagram': IconBrandInstagram,
+  'Email': IconAt,
+};
+---
+
+<Layout title="Contact - Benjamín García" description="Get in touch to discuss your next project. Full-Stack web development and technical consulting." lang={lang}>
+  <section class="section-container pt-24">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h1 class="section-title">{t('contact.title')}</h1>
+      <p class="section-subtitle">{t('contact.subtitle')}</p>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="animate-on-scroll">
+        <div class="card p-8">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send me a message</h3>
+          <ContactForm client:load lang={lang} />
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div class="animate-on-scroll">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('contact.or')}</h3>
+          <div class="space-y-4">
+            {socialNetworks.map((social) => {
+              const Icon = iconMap[social.name];
+              return (
+                <a href={social.link} target={social.name !== 'Email' ? '_blank' : undefined} rel={social.name !== 'Email' ? 'noopener noreferrer' : undefined} class="card p-6 flex items-center gap-4 hover:shadow-lg transition-all group">
+                  <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-accent-100 dark:bg-accent-900 text-accent-600 dark:text-accent-400 group-hover:scale-110 transition-transform">
+                    <Icon size={24} />
+                  </div>
+                  <div>
+                    <div class="font-semibold text-gray-900 dark:text-white">{social.name}</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">{social.descriptionEn}</div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
+        <div class="animate-on-scroll">
+          <div class="card p-8 bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/20 dark:to-accent-800/20 border-accent-200 dark:border-accent-800">
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Response time</h4>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              I typically respond within 24 hours. If your project is urgent, feel free to mention it in your message.
+            </p>
+            <div class="flex items-center gap-2 text-accent-600 dark:text-accent-400 font-medium">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Available for new projects</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="animate-on-scroll">
+          <div class="card p-8">
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">FAQs</h4>
+            <div class="space-y-4 text-gray-700 dark:text-gray-300">
+              <div>
+                <div class="font-semibold mb-1">Do you work with international clients?</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                  Yes, I work with clients worldwide. I speak Spanish and English.
+                </div>
+              </div>
+              <div>
+                <div class="font-semibold mb-1">What's your preferred stack?</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                  TypeScript, React, Next.js/Astro for frontend and Node.js for backend.
+                </div>
+              </div>
+              <div>
+                <div class="font-semibold mb-1">Do you offer post-launch support?</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                  Yes, I offer maintenance and ongoing support based on project needs.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

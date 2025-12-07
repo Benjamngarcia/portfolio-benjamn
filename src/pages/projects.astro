@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../utils/i18n';
+import { projects } from '../data/portfolio';
+import { IconBrandGithub } from '@tabler/icons-react';
+import ProjectCard from '../components/ProjectCard';
+
+const lang = 'es';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title="Proyectos - Benjamín García"
+  description="Portfolio de proyectos web desarrollados con React, Next.js, Node.js, TypeScript y más tecnologías modernas."
+  lang={lang}
+>
+  <!-- Hero -->
+  <section class="section-container pt-24">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h1 class="section-title">
+        {t('projects.title')}
+      </h1>
+      <p class="section-subtitle">
+        {t('projects.subtitle')}
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="section-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project, index) => (
+        <ProjectCard
+          client:load
+          project={project}
+          lang={lang}
+          delay={index * 75}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-container">
+    <div class="bg-accent-500 rounded-2xl p-12 text-center animate-on-scroll">
+      <h3 class="text-2xl lg:text-3xl font-bold text-white mb-4">
+        ¿Quieres ver más de mi trabajo?
+      </h3>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Visita mi perfil de GitHub para ver todos mis proyectos y contribuciones
+      </p>
+      <a
+        href="https://github.com/Benjamngarcia"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium bg-white text-accent-600 hover:bg-gray-50 transition-colors"
+      >
+        <IconBrandGithub size={24} className="mr-2" />
+        Ver GitHub
+      </a>
+    </div>
+  </section>
+</Layout>

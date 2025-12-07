@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../utils/i18n';
+import { IconCode, IconBrandReact, IconServer, IconChecklist, IconRocket, IconArrowRight } from '@tabler/icons-react';
+
+const lang = 'es';
+const t = useTranslations(lang);
+
+const services = [
+  {
+    icon: IconCode,
+    title: t('services.fullstack.title'),
+    description: t('services.fullstack.description'),
+    features: [
+      'Arquitectura escalable y mantenible',
+      'Integración de APIs y servicios externos',
+      'Despliegue y configuración de servidores',
+      'Optimización de rendimiento'
+    ]
+  },
+  {
+    icon: IconBrandReact,
+    title: t('services.frontend.title'),
+    description: t('services.frontend.description'),
+    features: [
+      'Diseños responsivos y accesibles',
+      'Animaciones y micro-interacciones',
+      'SEO y optimización de rendimiento',
+      'Integración con headless CMS'
+    ]
+  },
+  {
+    icon: IconServer,
+    title: t('services.backend.title'),
+    description: t('services.backend.description'),
+    features: [
+      'APIs RESTful y GraphQL',
+      'Autenticación y autorización',
+      'Diseño y optimización de bases de datos',
+      'Integración de servicios en la nube'
+    ]
+  },
+  {
+    icon: IconChecklist,
+    title: t('services.consulting.title'),
+    description: t('services.consulting.description'),
+    features: [
+      'Revisión y auditoría de código',
+      'Diseño de arquitectura de software',
+      'Optimización de rendimiento',
+      'Mentoría y capacitación técnica'
+    ]
+  },
+  {
+    icon: IconRocket,
+    title: t('services.mvp.title'),
+    description: t('services.mvp.description'),
+    features: [
+      'Desarrollo rápido y eficiente',
+      'Stack tecnológico moderno',
+      'Diseño centrado en el usuario',
+      'Listo para escalar'
+    ]
+  },
+];
+---
+
+<Layout
+  title="Servicios - Benjamín García"
+  description="Servicios de desarrollo web Full-Stack, Frontend, Backend, consultoría técnica y desarrollo de MVPs."
+  lang={lang}
+>
+  <!-- Hero -->
+  <section class="section-container pt-24">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h1 class="section-title">
+        {t('services.title')}
+      </h1>
+      <p class="section-subtitle">
+        {t('services.subtitle')}
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {services.map((service, index) => {
+        const Icon = service.icon;
+        return (
+          <div class="card p-8 animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
+            <!-- Icon -->
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-accent-100 dark:bg-accent-900 mb-6">
+              <Icon size={32} className="text-accent-600 dark:text-accent-400" />
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              {service.title}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+              {service.description}
+            </p>
+
+            <!-- Features -->
+            <ul class="space-y-3">
+              {service.features.map((feature) => (
+                <li class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                  <svg class="w-6 h-6 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="bg-gray-50 py-16 dark:bg-[#0f0f0f]">
+    <div class="section-container">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          Proceso de Trabajo
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          Metodología ágil y orientada a resultados
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+          { step: '01', title: 'Descubrimiento', desc: 'Entender tus necesidades y objetivos' },
+          { step: '02', title: 'Planificación', desc: 'Diseñar la solución técnica ideal' },
+          { step: '03', title: 'Desarrollo', desc: 'Construir con las mejores prácticas' },
+          { step: '04', title: 'Entrega', desc: 'Desplegar y dar soporte continuo' },
+        ].map((phase, index) => (
+          <div class="text-center animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
+            <div class="text-5xl font-bold text-accent-500 dark:text-accent-400 mb-4">
+              {phase.step}
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              {phase.title}
+            </h4>
+            <p class="text-gray-600 dark:text-gray-400">
+              {phase.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-container">
+    <div class="bg-accent-500 rounded-2xl p-12 text-center animate-on-scroll">
+      <h3 class="text-2xl lg:text-3xl font-bold text-white mb-4">
+        ¿Listo para empezar tu proyecto?
+      </h3>
+      <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+        Agenda una consulta gratuita y conversemos sobre cómo puedo ayudarte a alcanzar tus objetivos
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium bg-white text-accent-600 hover:bg-gray-50 transition-colors">
+        {t('services.cta')}
+        <IconArrowRight size={20} className="ml-2" />
+      </a>
+    </div>
+  </section>
+</Layout>

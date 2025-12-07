@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../utils/i18n';
+import { projects, technologies } from '../data/portfolio';
+import { IconArrowRight, IconBrandGithub, IconBrandLinkedin, IconCode, IconRocket, IconUsers, IconDownload, IconMail } from '@tabler/icons-react';
+import TypingEffect from '../components/TypingEffect';
+import ProjectCard from '../components/ProjectCard';
+import TechSlider from '../components/TechSlider';
+
+const lang = 'es';
+const t = useTranslations(lang);
+
+const featuredProjects = projects.slice(0, 3);
+const typingTexts = [
+  'Full-Stack Developer',
+  'React & Next.js Developer',
+  'TypeScript Enthusiast',
+  'Building Modern Web Apps',
+];
+---
+
+<Layout
+  title="Benjamín García - Full-Stack Developer"
+  description="Desarrollador Full-Stack especializado en crear aplicaciones web modernas y escalables con React, Next.js, Node.js y más."
+  lang={lang}
+>
+  <!-- Hero Section -->
+  <section class="section-container min-h-[85vh] flex items-center">
+    <div class="max-w-4xl">
+      <div class="animate-on-scroll">
+        <!-- Header with small memoji -->
+        <div class="flex items-start gap-6 mb-8">
+          <div class="hidden sm:block">
+            <div class="relative animate-float">
+              <img
+                src="/img/main-memoji.png"
+                alt="Benjamín García"
+                class="w-24 h-24 object-contain"
+              />
+            </div>
+          </div>
+          <div class="flex-1">
+            <p class="text-accent-500 dark:text-accent-400 font-medium mb-3 flex items-center gap-2">
+              <span class="text-2xl animate-wave inline-block">👋</span>
+              {t('hero.greeting')}
+            </p>
+            <h1 class="text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white">
+              Benjamín García
+            </h1>
+          </div>
+        </div>
+
+        <!-- Typing Effect -->
+        <div class="text-2xl lg:text-3xl font-semibold mb-6 h-12 text-accent-600 dark:text-accent-400">
+          <TypingEffect client:load texts={typingTexts} className="text-accent-600 dark:text-accent-400" />
+        </div>
+
+        <!-- Description -->
+        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-2xl">
+          {t('hero.description')}
+        </p>
+
+        <!-- Tech Stack Preview with Tooltips -->
+        <div class="flex items-center gap-4 mb-8">
+          {['JavaScript', 'TypeScript', 'React', 'Next.js', 'NodeJS'].map((tech) => {
+            const techData = technologies.find(t => t.name === tech);
+            return techData && (
+              <div class="group relative">
+                <i class={`${techData.icon} text-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer`} style={`color: ${techData.color}`}></i>
+                <!-- Tooltip -->
+                <div class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-gray-900 dark:bg-gray-700 text-white text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                  {techData.name}
+                  <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-px border-4 border-transparent border-t-gray-900 dark:border-t-gray-700"></div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4 mb-8">
+          <a href="/projects" class="btn-primary">
+            {t('hero.cta.projects')}
+            <IconArrowRight size={20} className="ml-2" />
+          </a>
+          <a href="/contact" class="btn-secondary">
+            {t('hero.cta.contact')}
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex gap-4">
+          <a
+            href="https://github.com/Benjamngarcia"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors"
+            aria-label="GitHub"
+          >
+            <IconBrandGithub size={26} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/benjamngarcia"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <IconBrandLinkedin size={26} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="section-container">
+    <div class="text-center mb-12 animate-on-scroll">
+      <h3 class="section-title">
+        Proyectos Destacados
+      </h3>
+      <p class="section-subtitle">
+        Algunos de mis trabajos más recientes
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {featuredProjects.map((project, index) => (
+        <ProjectCard
+          client:load
+          project={project}
+          lang={lang}
+          delay={index * 100}
+        />
+      ))}
+    </div>
+    <div class="text-center mt-12 animate-on-scroll">
+      <a href="/projects" class="btn-primary">
+        Ver todos los proyectos
+        <IconArrowRight size={20} className="ml-2" />
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-container">
+    <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+      <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        ¿Tienes un proyecto en mente?
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+        Hablemos sobre tu próximo proyecto
+      </p>
+      <a
+        href="mailto:benjamngarcia@outlook.com"
+        class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-accent-500 hover:bg-accent-600 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        benjamngarcia@outlook.com
+      </a>
+    </div>
+  </section>
+
+  <!-- About Me & Tech Stack Section -->
+  <section class="section-container">
+    <div class="max-w-4xl mx-auto animate-on-scroll">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3">
+          Sobre mí
+        </h2>
+        <div class="w-16 h-1 bg-accent-500 mx-auto"></div>
+      </div>
+
+      <!-- Bio Paragraph -->
+      <div class="max-w-3xl mx-auto mb-16">
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center mb-6">
+          Soy un <strong class="text-accent-500">Desarrollador Full-Stack</strong> con más de 3 años de experiencia
+          creando aplicaciones web modernas y escalables. Me especializo en el ecosistema
+          <strong class="text-gray-900 dark:text-white">JavaScript/TypeScript</strong>,
+          con un enfoque particular en React y Next.js para el frontend, y Node.js para el backend.
+        </p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+          Mi pasión es construir productos digitales que no solo funcionen perfectamente,
+          sino que también ofrezcan una <strong class="text-accent-500">experiencia de usuario excepcional</strong>.
+          Me mantengo constantemente actualizado con las últimas tecnologías y mejores prácticas de la industria.
+        </p>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="text-center">
+          <div class="text-4xl font-bold text-accent-500 mb-2">3+</div>
+          <div class="text-gray-600 dark:text-gray-400">Años de Experiencia</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-accent-500 mb-2">15+</div>
+          <div class="text-gray-600 dark:text-gray-400">Proyectos Completados</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold text-accent-500 mb-2">10+</div>
+          <div class="text-gray-600 dark:text-gray-400">Clientes Satisfechos</div>
+        </div>
+      </div>
+
+      <!-- Tech Stack Slider -->
+      <div>
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white text-center mb-8">
+          Tecnologías que domino
+        </h3>
+        <TechSlider
+          client:load
+          technologies={technologies.slice(0, 12).map(t => ({
+            name: t.name,
+            icon: t.icon,
+            color: t.color
+          }))}
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

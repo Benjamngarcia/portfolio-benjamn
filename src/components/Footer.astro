@@ -1,0 +1,93 @@
+---
+import { socialNetworks } from '../data/portfolio';
+import { IconBrandLinkedin, IconBrandGithub, IconBrandInstagram, IconAt, IconHeart } from '@tabler/icons-react';
+
+const iconMap: Record<string, any> = {
+  'LinkedIn': IconBrandLinkedin,
+  'GitHub': IconBrandGithub,
+  'Instagram': IconBrandInstagram,
+  'Email': IconAt,
+};
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-50 border-t border-gray-200 dark:bg-[#0f0f0f] dark:border-[#2a2a2a]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Brand -->
+      <div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">
+          Benjamín García
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm">
+          Full-Stack Developer
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">
+          Enlaces
+        </h4>
+        <ul class="space-y-2">
+          <li>
+            <a href="/about" class="text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors text-sm">
+              Sobre mí
+            </a>
+          </li>
+          <li>
+            <a href="/projects" class="text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors text-sm">
+              Proyectos
+            </a>
+          </li>
+          <li>
+            <a href="/services" class="text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors text-sm">
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a href="/contact" class="text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors text-sm">
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">
+          Redes Sociales
+        </h4>
+        <div class="flex gap-4">
+          {socialNetworks.map((social) => {
+            const Icon = iconMap[social.name];
+            return (
+              <a
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-accent-500 hover:text-white transition-all duration-300 hover:scale-110 dark:bg-[#222222] dark:text-gray-300 dark:hover:bg-accent-500"
+                aria-label={social.descriptionEs}
+              >
+                <Icon size={20} />
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 dark:border-[#2a2a2a]">
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        © {currentYear} Benjamín García. Todos los derechos reservados.
+      </p>
+      <p class="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
+        Hecho con
+        <IconHeart size={16} className="text-red-500 fill-current" />
+        <span>Astro & Tailwind CSS</span>
+      </p>
+    </div>
+  </div>
+</footer>

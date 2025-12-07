@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../utils/i18n';
+import { IconCode, IconBrandReact, IconServer, IconChecklist, IconRocket, IconArrowRight } from '@tabler/icons-react';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const services = [
+  {
+    icon: IconCode,
+    title: t('services.fullstack.title'),
+    description: t('services.fullstack.description'),
+    features: [
+      'Scalable and maintainable architecture',
+      'API and external service integration',
+      'Server deployment and configuration',
+      'Performance optimization'
+    ]
+  },
+  {
+    icon: IconBrandReact,
+    title: t('services.frontend.title'),
+    description: t('services.frontend.description'),
+    features: [
+      'Responsive and accessible designs',
+      'Animations and micro-interactions',
+      'SEO and performance optimization',
+      'Headless CMS integration'
+    ]
+  },
+  {
+    icon: IconServer,
+    title: t('services.backend.title'),
+    description: t('services.backend.description'),
+    features: [
+      'RESTful and GraphQL APIs',
+      'Authentication and authorization',
+      'Database design and optimization',
+      'Cloud service integration'
+    ]
+  },
+  {
+    icon: IconChecklist,
+    title: t('services.consulting.title'),
+    description: t('services.consulting.description'),
+    features: [
+      'Code review and auditing',
+      'Software architecture design',
+      'Performance optimization',
+      'Technical mentoring and training'
+    ]
+  },
+  {
+    icon: IconRocket,
+    title: t('services.mvp.title'),
+    description: t('services.mvp.description'),
+    features: [
+      'Fast and efficient development',
+      'Modern tech stack',
+      'User-centered design',
+      'Ready to scale'
+    ]
+  },
+];
+---
+
+<Layout title="Services - Benjamín García" description="Full-Stack web development services, Frontend, Backend, technical consulting and MVP development." lang={lang}>
+  <section class="section-container pt-24">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h1 class="section-title">{t('services.title')}</h1>
+      <p class="section-subtitle">{t('services.subtitle')}</p>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {services.map((service, index) => {
+        const Icon = service.icon;
+        return (
+          <div class="card p-8 animate-on-scroll hover:shadow-2xl transition-all duration-300" style={`animation-delay: ${index * 100}ms`}>
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-accent-100 dark:bg-accent-900 mb-6">
+              <Icon size={32} className="text-accent-600 dark:text-accent-400" />
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{service.description}</p>
+            <ul class="space-y-3">
+              {service.features.map((feature) => (
+                <li class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                  <svg class="w-6 h-6 text-accent-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="bg-gray-50 dark:bg-gray-900 py-16">
+    <div class="section-container">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Work Process</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400">Agile and results-oriented methodology</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {[
+          { step: '01', title: 'Discovery', desc: 'Understand your needs and objectives' },
+          { step: '02', title: 'Planning', desc: 'Design the ideal technical solution' },
+          { step: '03', title: 'Development', desc: 'Build with best practices' },
+          { step: '04', title: 'Delivery', desc: 'Deploy and provide ongoing support' },
+        ].map((phase, index) => (
+          <div class="text-center animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
+            <div class="text-5xl font-bold text-accent-500 dark:text-accent-400 mb-4">{phase.step}</div>
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{phase.title}</h4>
+            <p class="text-gray-600 dark:text-gray-400">{phase.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <div class="bg-gradient-to-r from-accent-500 to-accent-600 rounded-3xl p-12 text-center animate-on-scroll">
+      <h3 class="text-2xl lg:text-3xl font-bold text-white mb-4">Ready to start your project?</h3>
+      <p class="text-lg text-accent-50 mb-8 max-w-2xl mx-auto">
+        Schedule a free consultation and let's talk about how I can help you achieve your goals
+      </p>
+      <a href="/en/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium bg-white text-accent-600 hover:bg-gray-50 transition-all duration-300 hover:shadow-xl hover:scale-105">
+        {t('services.cta')}<IconArrowRight size={20} className="ml-2" />
+      </a>
+    </div>
+  </section>
+</Layout>

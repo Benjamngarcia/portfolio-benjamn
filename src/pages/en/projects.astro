@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../utils/i18n';
+import { projects } from '../../data/portfolio';
+import { IconArrowRight, IconBrandGithub, IconExternalLink } from '@tabler/icons-react';
+
+const lang = 'en';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title="Projects - Benjamín García"
+  description="Web project portfolio developed with React, Next.js, Node.js, TypeScript and more modern technologies."
+  lang={lang}
+>
+  <section class="section-container pt-24">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h1 class="section-title">{t('projects.title')}</h1>
+      <p class="section-subtitle">{t('projects.subtitle')}</p>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project, index) => (
+        <div class="card overflow-hidden group animate-on-scroll hover:shadow-2xl transition-all duration-300" style={`animation-delay: ${index * 75}ms`}>
+          <div class="relative h-56 overflow-hidden bg-gradient-to-br from-accent-100 to-accent-200 dark:from-accent-900 dark:to-accent-800">
+            <img src={project.img} alt={project.title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-accent-500 dark:group-hover:text-accent-400 transition-colors">
+              {project.title}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{project.descriptionEn}</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.technologies.map((tech) => (
+                <span class="px-3 py-1 text-xs font-medium bg-accent-100 dark:bg-accent-900 text-accent-700 dark:text-accent-300 rounded-full">{tech}</span>
+              ))}
+            </div>
+            <div class="flex flex-wrap gap-3">
+              {project.demo && (
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" class="btn-primary text-sm flex-1 justify-center">
+                  <IconExternalLink size={16} className="mr-2" />{t('projects.view')}
+                </a>
+              )}
+              {project.repo && (
+                <a href={project.repo} target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm flex-1 justify-center">
+                  <IconBrandGithub size={16} className="mr-2" />{t('projects.code')}
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-container">
+    <div class="bg-gradient-to-r from-accent-500 to-accent-600 rounded-3xl p-12 text-center animate-on-scroll">
+      <h3 class="text-2xl lg:text-3xl font-bold text-white mb-4">Want to see more of my work?</h3>
+      <p class="text-lg text-accent-50 mb-8 max-w-2xl mx-auto">
+        Visit my GitHub profile to see all my projects and contributions
+      </p>
+      <a href="https://github.com/Benjamngarcia" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium bg-white text-accent-600 hover:bg-gray-50 transition-all duration-300 hover:shadow-xl hover:scale-105">
+        <IconBrandGithub size={24} className="mr-2" />View GitHub
+      </a>
+    </div>
+  </section>
+</Layout>

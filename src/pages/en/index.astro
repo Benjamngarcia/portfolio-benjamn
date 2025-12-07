@@ -1,0 +1,225 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../utils/i18n';
+import { projects, technologies } from '../../data/portfolio';
+import { IconArrowRight, IconBrandGithub, IconBrandLinkedin, IconCode, IconRocket, IconUsers } from '@tabler/icons-react';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const featuredProjects = projects.slice(0, 3);
+---
+
+<Layout
+  title="Benjamín García - Full-Stack Developer"
+  description="Full-Stack Developer specialized in creating modern, scalable web applications with React, Next.js, Node.js, and more."
+  lang={lang}
+>
+  <!-- Hero Section -->
+  <section class="section-container min-h-[80vh] flex items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <div class="animate-on-scroll">
+        <p class="text-accent-500 dark:text-accent-400 font-medium mb-4">
+          {t('hero.greeting')}
+        </p>
+        <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+          Benjamín García
+        </h1>
+        <h2 class="text-2xl lg:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
+          {t('hero.role')}
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+          {t('hero.description')}
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/en/projects" class="btn-primary">
+            {t('hero.cta.projects')}
+            <IconArrowRight size={20} className="ml-2" />
+          </a>
+          <a href="/en/contact" class="btn-secondary">
+            {t('hero.cta.contact')}
+          </a>
+        </div>
+        <div class="flex gap-4 mt-8">
+          <a
+            href="https://github.com/Benjamngarcia"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors"
+            aria-label="GitHub"
+          >
+            <IconBrandGithub size={28} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/benjamngarcia"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <IconBrandLinkedin size={28} />
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Image/Illustration -->
+      <div class="animate-on-scroll hidden lg:block">
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-accent-400 to-accent-600 rounded-3xl opacity-20 blur-3xl"></div>
+          <div class="relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-12 rounded-3xl border border-gray-200 dark:border-gray-700">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md">
+                <IconCode size={32} className="text-accent-500" />
+                <div>
+                  <p class="font-semibold text-gray-900 dark:text-white">Clean Code</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Maintainable & Scalable</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md">
+                <IconRocket size={32} className="text-accent-500" />
+                <div>
+                  <p class="font-semibold text-gray-900 dark:text-white">Performance</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Advanced optimization</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md">
+                <IconUsers size={32} className="text-accent-500" />
+                <div>
+                  <p class="font-semibold text-gray-900 dark:text-white">User-Centered</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">UX-focused approach</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Preview -->
+  <section class="bg-gray-50 dark:bg-gray-900 py-16">
+    <div class="section-container">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          Tech Stack
+        </h3>
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          Technologies I work with daily
+        </p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 animate-on-scroll">
+        {technologies.slice(0, 12).map((tech, index) => (
+          <a
+            href={tech.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card p-6 flex flex-col items-center justify-center gap-3 hover:scale-105 group"
+            style={`animation-delay: ${index * 50}ms`}
+          >
+            <div
+              class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-xl text-white"
+              style={`background-color: ${tech.color}`}
+            >
+              {tech.name.slice(0, 2)}
+            </div>
+            <span class="text-sm font-medium text-gray-900 dark:text-white text-center">
+              {tech.name}
+            </span>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/en/about" class="text-accent-500 hover:text-accent-600 dark:hover:text-accent-400 font-medium inline-flex items-center gap-2">
+          View all technologies
+          <IconArrowRight size={20} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="section-container">
+    <div class="text-center mb-12 animate-on-scroll">
+      <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        Featured Projects
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        Some of my most recent work
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {featuredProjects.map((project, index) => (
+        <div class="card overflow-hidden group animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
+          <div class="relative h-48 overflow-hidden bg-gradient-to-br from-accent-100 to-accent-200 dark:from-accent-900 dark:to-accent-800">
+            <img
+              src={project.img}
+              alt={project.title}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-6">
+            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {project.title}
+            </h4>
+            <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+              {project.descriptionEn}
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              {project.technologies.slice(0, 3).map((tech) => (
+                <span class="px-3 py-1 text-xs font-medium bg-accent-100 dark:bg-accent-900 text-accent-700 dark:text-accent-300 rounded-full">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div class="flex gap-3">
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-accent-500 hover:text-accent-600 dark:hover:text-accent-400 font-medium text-sm inline-flex items-center gap-1"
+                >
+                  View demo
+                  <IconArrowRight size={16} />
+                </a>
+              )}
+              {project.repo && (
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-medium text-sm inline-flex items-center gap-1"
+                >
+                  <IconBrandGithub size={16} />
+                  Code
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-12 animate-on-scroll">
+      <a href="/en/projects" class="btn-primary">
+        View all projects
+        <IconArrowRight size={20} className="ml-2" />
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-accent-500 to-accent-600 py-20">
+    <div class="section-container text-center animate-on-scroll">
+      <h3 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+        Have a project in mind?
+      </h3>
+      <p class="text-xl text-accent-50 mb-8 max-w-2xl mx-auto">
+        Let's work together to turn your idea into an exceptional digital product
+      </p>
+      <a href="/en/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium bg-white text-accent-600 hover:bg-gray-50 transition-all duration-300 hover:shadow-xl hover:scale-105">
+        Get in touch
+        <IconArrowRight size={20} className="ml-2" />
+      </a>
+    </div>
+  </section>
+</Layout>

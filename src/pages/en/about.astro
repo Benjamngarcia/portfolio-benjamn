@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../utils/i18n';
+import { technologies } from '../../data/portfolio';
+import { IconTrophy, IconCode, IconUsers, IconRocket } from '@tabler/icons-react';
+
+const lang = 'en';
+const t = useTranslations(lang);
+
+const stats = [
+  { value: '3+', label: t('about.experience.years'), icon: IconTrophy },
+  { value: '15+', label: t('about.experience.projects'), icon: IconCode },
+  { value: '10+', label: t('about.experience.clients'), icon: IconUsers },
+];
+---
+
+<Layout
+  title="About Me - Benjamín García"
+  description="Full-Stack Developer with experience in JavaScript, TypeScript, React, Next.js, Node.js and more. Focused on creating clean, maintainable code."
+  lang={lang}
+>
+  <section class="section-container pt-24">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h1 class="section-title">{t('about.title')}</h1>
+      <p class="section-subtitle">{t('about.subtitle')}</p>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="animate-on-scroll">
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-accent-400 to-accent-600 rounded-3xl opacity-20 blur-3xl"></div>
+          <div class="relative bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-12 border border-gray-200 dark:border-gray-700">
+            <div class="aspect-square bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl flex items-center justify-center">
+              <span class="text-8xl font-bold text-white">BG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6 animate-on-scroll">
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          {t('about.description')}
+        </p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          My passion is building digital products that not only work flawlessly but also deliver an exceptional user experience. I stay current with the latest industry trends and best practices.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="/en/contact" class="btn-primary">Let's work together</a>
+          <a href="/en/projects" class="btn-secondary">View my projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 dark:bg-gray-900 py-16">
+    <div class="section-container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {stats.map((stat, index) => {
+          const Icon = stat.icon;
+          return (
+            <div class="card p-8 text-center animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
+              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-100 dark:bg-accent-900 mb-4">
+                <Icon size={32} className="text-accent-600 dark:text-accent-400" />
+              </div>
+              <div class="text-4xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</div>
+              <div class="text-gray-600 dark:text-gray-400">{stat.label}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <div class="text-center mb-12 animate-on-scroll">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t('about.skills.title')}</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400">Tools and technologies I work with</p>
+    </div>
+
+    <div class="space-y-12">
+      <div class="animate-on-scroll">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+          <IconCode className="text-accent-500" />Frontend Development
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Sass'].map((tech) => {
+            const techData = technologies.find(t => t.name === tech);
+            return techData && (
+              <a href={techData.link} target="_blank" rel="noopener noreferrer" class="card p-6 hover:scale-105 transition-all group">
+                <div class="flex flex-col items-center gap-3">
+                  <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-xl text-white" style={`background-color: ${techData.color}`}>
+                    {techData.name.slice(0, 2)}
+                  </div>
+                  <span class="text-sm font-medium text-gray-900 dark:text-white text-center">{techData.name}</span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <div class="animate-on-scroll">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+          <IconRocket className="text-accent-500" />Backend Development
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {['NodeJS', 'GraphQL', 'Python', 'MySQL', 'MongoDB'].map((tech) => {
+            const techData = technologies.find(t => t.name === tech);
+            return techData && (
+              <a href={techData.link} target="_blank" rel="noopener noreferrer" class="card p-6 hover:scale-105 transition-all group">
+                <div class="flex flex-col items-center gap-3">
+                  <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-xl text-white" style={`background-color: ${techData.color}`}>
+                    {techData.name.slice(0, 2)}
+                  </div>
+                  <span class="text-sm font-medium text-gray-900 dark:text-white text-center">{techData.name}</span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <div class="animate-on-scroll">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+          <IconUsers className="text-accent-500" />Tools & Platforms
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {['Git', 'Figma', 'Firebase', 'Auth0', 'Astro'].map((tech) => {
+            const techData = technologies.find(t => t.name === tech);
+            return techData && (
+              <a href={techData.link} target="_blank" rel="noopener noreferrer" class="card p-6 hover:scale-105 transition-all group">
+                <div class="flex flex-col items-center gap-3">
+                  <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-xl text-white" style={`background-color: ${techData.color}`}>
+                    {techData.name.slice(0, 2)}
+                  </div>
+                  <span class="text-sm font-medium text-gray-900 dark:text-white text-center">{techData.name}</span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <div class="card p-12 text-center animate-on-scroll">
+      <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        Interested in working together?
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+        I'm always open to new projects and collaboration opportunities
+      </p>
+      <a href="/en/contact" class="btn-primary">Get in touch</a>
+    </div>
+  </section>
+</Layout>

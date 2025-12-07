@@ -1,0 +1,318 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../utils/i18n';
+import { technologies } from '../data/portfolio';
+import { IconTrophy, IconCode, IconUsers, IconRocket, IconArrowRight } from '@tabler/icons-react';
+
+const lang = 'es';
+const t = useTranslations(lang);
+
+const stats = [
+  { value: '3+', label: t('about.experience.years'), icon: IconTrophy },
+  { value: '15+', label: t('about.experience.projects'), icon: IconCode },
+  { value: '10+', label: t('about.experience.clients'), icon: IconUsers },
+];
+---
+
+<Layout
+  title="Sobre mí - Benjamín García"
+  description="Desarrollador Full-Stack con experiencia en JavaScript, TypeScript, React, Next.js, Node.js y más. Enfocado en crear código limpio y mantenible."
+  lang={lang}
+>
+  <!-- Hero -->
+  <section class="section-container pt-24">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h1 class="section-title">
+        {t('about.title')}
+      </h1>
+      <p class="section-subtitle">
+        {t('about.subtitle')}
+      </p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="section-container">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+        <!-- Profile Image -->
+        <div class="lg:col-span-2 animate-on-scroll">
+          <div class="sticky top-24">
+            <div class="rounded-2xl overflow-hidden shadow-lg border-4 border-gray-200 dark:border-[#2a2a2a]">
+              <img
+                src="/img/benjamngarcia.png"
+                alt="Benjamín García"
+                class="w-full h-auto object-cover"
+              />
+            </div>
+            <!-- Social Links -->
+            <div class="flex gap-4 mt-6 justify-center">
+              <a
+                href="https://github.com/Benjamngarcia"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#222222] text-gray-700 dark:text-gray-300 hover:bg-accent-500 hover:text-white transition-all"
+                aria-label="GitHub"
+              >
+                <IconBrandGithub size={22} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/benjamngarcia"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-[#222222] text-gray-700 dark:text-gray-300 hover:bg-accent-500 hover:text-white transition-all"
+                aria-label="LinkedIn"
+              >
+                <IconBrandLinkedin size={22} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="lg:col-span-3 space-y-8 animate-on-scroll">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+                <IconCode size={20} className="text-accent-500" />
+              </div>
+              ¿Quién soy?
+            </h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              {t('about.description')}
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+                <IconRocket size={20} className="text-accent-500" />
+              </div>
+              Mi Enfoque
+            </h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              Mi pasión es construir productos digitales que no solo funcionen perfectamente,
+              sino que también ofrezcan una <strong class="text-accent-500">experiencia de usuario excepcional</strong>.
+              Me mantengo actualizado con las últimas tendencias y mejores prácticas de la industria,
+              siempre buscando <strong class="text-gray-900 dark:text-white">innovar y mejorar</strong> en cada proyecto.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+                <IconUsers size={20} className="text-accent-500" />
+              </div>
+              ¿Por qué trabajar conmigo?
+            </h2>
+            <ul class="space-y-3 text-lg text-gray-700 dark:text-gray-300">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-accent-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Código limpio, escalable y mantenible</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-accent-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Comunicación clara y constante</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-accent-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Compromiso con los plazos y la calidad</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-accent-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Experiencia en proyectos complejos y escalables</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="/contact" class="btn-primary">
+              Trabajemos juntos
+            </a>
+            <a href="/projects" class="btn-secondary">
+              Ver mis proyectos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="bg-gray-50 py-16 dark:bg-[#0f0f0f]">
+    <div class="section-container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {stats.map((stat, index) => {
+          const Icon = stat.icon;
+          return (
+            <div class="card p-8 text-center animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
+              <div class="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-accent-100 dark:bg-accent-900/30 mb-4">
+                <Icon size={32} className="text-accent-600 dark:text-accent-400" />
+              </div>
+              <div class="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                {stat.value}
+              </div>
+              <div class="text-gray-600 dark:text-gray-400">
+                {stat.label}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="section-container">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        {t('about.skills.title')}
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Herramientas y tecnologías con las que trabajo día a día para crear soluciones efectivas
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto space-y-16">
+      <!-- Frontend -->
+      <div class="animate-on-scroll">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-xl bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+            <IconCode size={24} className="text-accent-500" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+              Frontend Development
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400">Creando interfaces modernas e interactivas</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Sass'].map((tech) => {
+            const techData = technologies.find(t => t.name === tech);
+            return techData && (
+              <a
+                href={techData.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative"
+              >
+                <div class="card p-6 h-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <div class="flex flex-col items-center gap-4">
+                    <div class="relative">
+                      <i class={`${techData.icon} text-5xl transition-transform duration-300 group-hover:scale-110`} style={`color: ${techData.color}`}></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-900 dark:text-white text-center">
+                      {techData.name}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="animate-on-scroll">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-xl bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+            <IconRocket size={24} className="text-accent-500" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+              Backend Development
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400">Construyendo APIs robustas y escalables</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {['NodeJS', 'GraphQL', 'Python', 'MySQL', 'MongoDB'].map((tech) => {
+            const techData = technologies.find(t => t.name === tech);
+            return techData && (
+              <a
+                href={techData.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative"
+              >
+                <div class="card p-6 h-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <div class="flex flex-col items-center gap-4">
+                    <div class="relative">
+                      <i class={`${techData.icon} text-5xl transition-transform duration-300 group-hover:scale-110`} style={`color: ${techData.color}`}></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-900 dark:text-white text-center">
+                      {techData.name}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- Tools & Others -->
+      <div class="animate-on-scroll">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-xl bg-accent-100 dark:bg-accent-900/30 flex items-center justify-center">
+            <IconUsers size={24} className="text-accent-500" />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+              Tools & Platforms
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400">Herramientas para optimizar el flujo de trabajo</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {['Git', 'Figma', 'Firebase', 'Auth0', 'Astro'].map((tech) => {
+            const techData = technologies.find(t => t.name === tech);
+            return techData && (
+              <a
+                href={techData.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative"
+              >
+                <div class="card p-6 h-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <div class="flex flex-col items-center gap-4">
+                    <div class="relative">
+                      <i class={`${techData.icon} text-5xl transition-transform duration-300 group-hover:scale-110`} style={`color: ${techData.color}`}></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-900 dark:text-white text-center">
+                      {techData.name}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-container">
+    <div class="card p-12 text-center animate-on-scroll">
+      <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        ¿Interesado en trabajar juntos?
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+        Estoy siempre abierto a nuevos proyectos y oportunidades de colaboración
+      </p>
+      <a href="/contact" class="btn-primary">
+        Ponte en contacto
+      </a>
+    </div>
+  </section>
+</Layout>

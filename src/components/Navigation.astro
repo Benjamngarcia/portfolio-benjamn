@@ -1,0 +1,76 @@
+---
+import ThemeToggle from './ThemeToggle';
+import MobileMenu from './MobileMenu';
+
+const navItems = [
+  {
+    href: '/',
+    label: 'Inicio',
+    icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
+  },
+  {
+    href: '/about',
+    label: 'Sobre mí',
+    icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z'
+  },
+  {
+    href: '/projects',
+    label: 'Proyectos',
+    icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10'
+  },
+  {
+    href: '/services',
+    label: 'Servicios',
+    icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
+  },
+  {
+    href: '/contact',
+    label: 'Contacto',
+    icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
+  },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-4 left-0 right-0 z-50 px-4">
+  <div class="max-w-fit mx-auto bg-white/90 backdrop-blur-md rounded-full border border-gray-200 shadow-lg dark:bg-[#222222]/90 dark:border-[#2a2a2a]">
+    <div class="flex items-center justify-between gap-2 px-6 py-3">
+      <!-- Logo/Name -->
+      <a href="/" class="text-lg font-bold text-gray-900 dark:text-white hover:text-accent-500 dark:hover:text-accent-400 transition-colors whitespace-nowrap">
+        BG
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-2">
+        {navItems.map((item) => {
+          const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
+          return (
+            <a
+              href={item.href}
+              class={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                isActive
+                  ? 'bg-accent-500 text-white shadow-md'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2a2a2a]'
+              }`}
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}></path>
+              </svg>
+              <span>{item.label}</span>
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Controls -->
+      <div class="flex items-center gap-2">
+        <ThemeToggle client:load />
+        <MobileMenu client:load navItems={navItems} />
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="h-20"></div>
